@@ -1,12 +1,23 @@
 import { extendTheme } from "@chakra-ui/react";
 
-import colors from "./colors";
 import Button from "./components/button";
 import fonts from "./fonts";
 
 const customTheme = extendTheme({
   fonts,
-  colors,
+  colors: {
+    brand: {
+      100: "#333333",
+      200: "#ed2224",
+      300: "#ef682f",
+      400: "#005e8a",
+      500: "",
+      600: "",
+      700: "",
+      800: "",
+      900: "",
+    },
+  },
   components: {
     Button,
   },

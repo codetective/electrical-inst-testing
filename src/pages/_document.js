@@ -1,14 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { ColorModeScript } from "@chakra-ui/react";
-import type { DocumentContext } from "next/document";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-import customTheme from "lib/styles/customTheme";
+import customTheme from "../lib/styles/customTheme";
 
 const APP_NAME = "nextarter-chakra";
 
 class MyDocument extends Document {
-  static getInitialProps(ctx: DocumentContext) {
+  static getInitialProps(ctx) {
     return Document.getInitialProps(ctx);
   }
 
@@ -16,8 +15,14 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat&family=Raleway:wght@400;700&family=Varela+Round&display=swap"
             rel="stylesheet"
           />
 

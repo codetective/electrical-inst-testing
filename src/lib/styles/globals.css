@@ -1,1 +1,59 @@
 /* Global Styling here */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  /* color: #0087ca; */
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ef682f;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@keyframes changeBg {
+  0% {
+    background-image: url("/images/img1.jpg");
+  }
+  50% {
+    background-image: url("/images/img2.jpg");
+  }
+  100% {
+    background-image: url("/images/img3.jpg");
+  }
+}
+
+.hero {
+  -webkit-animation: changeBg 20s infinite;
+  animation: changeBg 20s infinite;
+  background-color: rgba(0, 0, 0, 0.539);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+}
+
+.mainNavGradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.877663773097349) 23%,
+    rgba(255, 255, 255, 0) 68%
+  );
+}
+
+.bgr {
+  /* background-color: #666; */
+  /* mix-blend-mode: hard-light; */
+}
