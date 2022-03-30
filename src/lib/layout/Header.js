@@ -4,7 +4,6 @@ import WrapContent from "./WrapContent";
 import Logo from "./Logo";
 import { BiMenuAltRight } from "react-icons/bi";
 import navLists from "../../lib/navLists";
-import Hero from "../pages/home/hero";
 
 const Header = () => {
   return (
@@ -112,7 +111,6 @@ const Header = () => {
           </HStack>
         </WrapContent>
       </Box>
-      <Hero />
     </>
   );
 };

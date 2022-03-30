@@ -16,7 +16,8 @@ export default function Hero() {
       <Box className="bgr">
         <Container maxWidth="container.xl" px={5}>
           <Stack
-            minH={"95vh"}
+            minH={"90vh"}
+            maxH="700px"
             direction={{ base: "column", md: "row" }}
             pt={["10px", "150px"]}
             pb={["60px", "40px"]}
