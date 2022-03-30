@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <Box pos="relative" className="hero">
       <Box className="bgr">
-        <Container maxWidth="container.xl" px={5}>
+        <Container maxWidth="container.xl" px={8}>
           <Stack
             minH={"90vh"}
             maxH="700px"
@@ -49,7 +49,7 @@ export default function Hero() {
                   <Text
                     textShadow="2px 2px 5px black"
                     className="qfont"
-                    fontSize={{ base: "md", lg: "lg" }}
+                    fontSize={{ base: "lg", lg: "xl" }}
                     color={"gray.100"}
                     fontWeight="bold"
                   >

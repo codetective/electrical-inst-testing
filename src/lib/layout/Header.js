@@ -1,13 +1,26 @@
-import { Box, Flex, Text, HStack, IconButton } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  HStack,
+  IconButton,
+  useDisclosure,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import WrapContent from "./WrapContent";
 import Logo from "./Logo";
 import { BiMenuAltRight } from "react-icons/bi";
 import navLists from "../../lib/navLists";
+import NavDrawer from "./NavDrawer";
 
 const Header = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isLargerThan914] = useMediaQuery("(min-width: 990.5px)");
+
   return (
     <>
+      {!isLargerThan914 && <NavDrawer isOpen={isOpen} onClose={onClose} />}
       <Box bg="brand.100" color="gray.200">
         <WrapContent>
           <Flex
@@ -61,6 +74,7 @@ const Header = () => {
                 </HStack>
               </Box>
               <IconButton
+                onClick={onOpen}
                 display={["initial", "initial", "inital", "none"]}
                 as={BiMenuAltRight}
                 borderRadius="sm"

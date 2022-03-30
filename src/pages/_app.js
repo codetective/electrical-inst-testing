@@ -2,6 +2,8 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import defaultSEOConfig from "../../next-seo.config";
 import Layout from "../lib/layout";

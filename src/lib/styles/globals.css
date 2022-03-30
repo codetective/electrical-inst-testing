@@ -52,8 +52,24 @@
     rgba(255, 255, 255, 0) 68%
   );
 }
-
-.bgr {
-  /* background-color: #666; */
-  /* mix-blend-mode: hard-light; */
+/* #marquee-content-box {
+  position: relative;
 }
+
+#marquee-content-wrap {
+  animation: marquee 5s linear infinite;
+}
+
+.marquee-content-card {
+  float: left;
+  width: 50%;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+} */
