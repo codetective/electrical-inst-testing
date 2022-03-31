@@ -69,10 +69,10 @@ export default function Hero() {
                         color="white"
                         textTransform={"uppercase"}
                         px={"40px"}
-                        _hover={{
-                          bg: ["primary.200"],
-                        }}
                         fontWeight="bold"
+                        _hover={{
+                          bg: "brand.400",
+                        }}
                       >
                         See our projects
                       </Button>

@@ -1,14 +1,18 @@
 import {
   Box,
   Container,
-  Link,
   SimpleGrid,
+  chakra,
+  VisuallyHidden,
   Stack,
   Text,
   Flex,
   Tag,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
+import Link from "next/link";
+import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Logo = (props) => {
   return (
@@ -29,10 +33,33 @@ const Logo = (props) => {
     </svg>
   );
 };
+const SocialButton = ({ children, label, href }) => {
+  return (
+    <chakra.button
+      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      rounded={"full"}
+      w={8}
+      h={8}
+      cursor={"pointer"}
+      as={"a"}
+      href={href}
+      display={"inline-flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      transition={"background 0.3s ease"}
+      _hover={{
+        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
+      }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
+  );
+};
 
 const ListHeader = ({ children }) => {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+    <Text fontWeight={"600"} fontSize={"lg"} mb={2}>
       {children}
     </Text>
   );
@@ -42,6 +69,26 @@ export default function LargeWithLogoCentered() {
   return (
     <Box bg="brand.100" color={"gray.300"}>
       <Container as={Stack} maxW={"container.xl"} py={10} px="8">
+        <Stack spacing={3} py="10">
+          <Box>
+            <Logo />
+          </Box>
+          <Text fontSize={"sm"}>...company catchphrase here</Text>
+          <Stack>
+            <Text>Company Headquater LTD</Text>
+            <Text> 1738 Address Road</Text>
+            <Text> City, State</Text>
+            <br />
+            <Link href="tel:+2348177552052">
+              <Text cursor="pointer" width="fit-content">
+                Phone:{" "}
+                <Text as="span" color="brand.300">
+                  +234 817 755 2052{" "}
+                </Text>
+              </Text>
+            </Link>
+          </Stack>
+        </Stack>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={"flex-start"}>
             <ListHeader>Product</ListHeader>
@@ -78,12 +125,37 @@ export default function LargeWithLogoCentered() {
             <Link href={"#"}>Status</Link>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Follow Us</ListHeader>
+            <Stack direction={"row"} spacing={6}>
+              <SocialButton label={"Twitter"} href={"#"}>
+                <FaTwitter />
+              </SocialButton>
+              <SocialButton label={"YouTube"} href={"#"}>
+                <FaYoutube />
+              </SocialButton>
+              <SocialButton label={"Instagram"} href={"#"}>
+                <FaInstagram />
+              </SocialButton>
+            </Stack>
+            {/* <ListHeader>Follow Us</ListHeader>
             <Link href={"#"}>Facebook</Link>
             <Link href={"#"}>Twitter</Link>
             <Link href={"#"}>Dribbble</Link>
             <Link href={"#"}>Instagram</Link>
-            <Link href={"#"}>LinkedIn</Link>
+            <Link href={"#"}>LinkedIn</Link> */}
+            <Link href="/">
+              <Button
+                maxW="fit-content"
+                color="gray.100"
+                textTransform={"uppercase"}
+                fontWeight="bold"
+                bg="brand.300"
+                _hover={{
+                  bg: "brand.400",
+                }}
+              >
+                contact us
+              </Button>
+            </Link>
           </Stack>
         </SimpleGrid>
       </Container>
