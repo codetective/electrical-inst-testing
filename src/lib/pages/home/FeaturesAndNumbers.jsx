@@ -1,5 +1,14 @@
-import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text,
+  Icon,
+  Flex,
+} from "@chakra-ui/react";
 import React from "react";
+import { FcFactory } from "react-icons/fc";
 
 import {
   Accordion,
@@ -66,8 +75,70 @@ export default function FeaturesAndNumbers() {
             </Text>
           </Link>
         </Stack>
-        <Stack>
-          <SimpleGrid columns="2">right</SimpleGrid>
+        <Stack borderTop={"6px solid gray"}>
+          <Box>
+            <Text
+              bg="white"
+              width="fit-content"
+              m={{ md: "auto" }}
+              transform="translateY(-15px)"
+              color="brand.400"
+              textTransform={"uppercase"}
+              fontWeight="bold"
+              fontSize="14px"
+              fontFamily={"Montserrat"}
+              px="3"
+            >
+              numbers we're proud of
+            </Text>
+          </Box>
+          <SimpleGrid columns="2" spacing={["5", "10"]}>
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+            <GridItem
+              icon={FcFactory}
+              title="56m"
+              text=" sq ft of industrial building layout"
+            />
+          </SimpleGrid>
         </Stack>
       </SimpleGrid>
     </WrapContent>
@@ -117,5 +188,32 @@ function ACItem({ item }) {
         </>
       )}
     </AccordionItem>
+  );
+}
+
+function GridItem({ icon, title, text }) {
+  return (
+    <Flex flexDir={{ base: "column", md: "column", lg: "row" }} spacing="0">
+      <Icon as={icon} color="brand.300" fontSize="56px" />
+      <Stack>
+        <Heading
+          fontWeight={"bolder"}
+          color="brand.300"
+          textTransform={"uppercase"}
+          fontSize="2xl"
+        >
+          {title}
+        </Heading>
+        <Text
+          fontWeight={"bolder"}
+          color="gray.600"
+          textTransform={"uppercase"}
+          fontSize="sm"
+          lineHeight={"15px"}
+        >
+          {text}
+        </Text>
+      </Stack>
+    </Flex>
   );
 }

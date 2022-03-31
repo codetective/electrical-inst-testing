@@ -1,3 +1,6 @@
+* {
+  transition: all 0.1s ease;
+}
 /* Global Styling here */
 .hover-underline-animation {
   display: inline-block;
@@ -52,24 +55,3 @@
     rgba(255, 255, 255, 0) 68%
   );
 }
-/* #marquee-content-box {
-  position: relative;
-}
-
-#marquee-content-wrap {
-  animation: marquee 5s linear infinite;
-}
-
-.marquee-content-card {
-  float: left;
-  width: 50%;
-}
-
-@keyframes marquee {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
-} */

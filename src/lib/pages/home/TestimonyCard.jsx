@@ -9,7 +9,7 @@ export default function TestimonyCard() {
       spacing={"5"}
       rounded="md"
       shadow="lg"
-      width={["80%", "95%"]}
+      width={["90%", "95%"]}
       m="auto"
       my="5"
     >
