@@ -2,7 +2,7 @@ let navLists = {
   subNav: [
     {
       name: "about us",
-      path: "/about",
+      path: "/about_us",
       button: false,
     },
     {
