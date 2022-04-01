@@ -3,12 +3,13 @@ import React from "react";
 import WrapContent from "../../layout/WrapContent";
 import { useBreakpointValue } from "@chakra-ui/react";
 import Link from "next/link";
+import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 
 function SafetyInfoBanner() {
   const heightValue = useBreakpointValue({
     base: "155px",
-    md: "120%",
-    lg: "120%",
+    md: "125%",
+    lg: "125%",
   });
 
   return (
@@ -16,7 +17,7 @@ function SafetyInfoBanner() {
       <Stack
         px={["initial", "initial", "40px"]}
         alignItems={["flex-start", "flex-start", "center"]}
-        pt="40px"
+        pt={["40px", "40px", "80px"]}
         mb="40px"
         _before={{
           content: `''`,
@@ -33,6 +34,7 @@ function SafetyInfoBanner() {
           zIndex: "-1",
         }}
       >
+        <SmallHorizontalBar mb="3" />
         <Heading
           textAlign={{ md: "center" }}
           width={["100%", "80%", "100%", "100%"]}

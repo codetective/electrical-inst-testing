@@ -1,6 +1,7 @@
 import { Heading, SimpleGrid, Stack, Text, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 import WrapContent from "../../layout/WrapContent";
 const contentForCards = [
   {
@@ -19,7 +20,8 @@ export default function DisciplineAndProjectCycleSection() {
   return (
     <WrapContent>
       <Stack py="40px" spacing={"10"} my="40px">
-        <Box textAlign="center">
+        <Box>
+          <SmallHorizontalBar mb="5" />
           <Heading as="h2">
             lorem ipsum toreta about <br /> what the oufit engages in
           </Heading>

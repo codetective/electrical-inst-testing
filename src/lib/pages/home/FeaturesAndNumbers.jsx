@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import WrapContent from "../../layout/WrapContent";
 import Link from "next/link";
+import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 const acItemsList = [
   {
     title: " item atrrribute totle",
@@ -40,6 +41,8 @@ export default function FeaturesAndNumbers() {
       <SimpleGrid columns={[1, 1, 2]} py="40px" spacing="40px">
         <Stack spacing={"5"}>
           <Box>
+            <SmallHorizontalBar mb="5" />
+
             <Heading as="h2">
               lorem ipsum toreta about what the oufit engages in
             </Heading>

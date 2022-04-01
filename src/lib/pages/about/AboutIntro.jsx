@@ -10,17 +10,13 @@ import React from "react";
 import WrapContent from "../../layout/WrapContent";
 import { BiDownArrowAlt } from "react-icons/bi";
 import Link from "next/link";
+import SmallTitleWithBar from "../../components/SmallTitleWithBar";
 
 export default function AboutIntro() {
   return (
     <WrapContent>
-      <Stack spacing="6" w={["full", "full", "75%"]} py="80px">
-        <HStack>
-          <Box w="50px" bg="brand.300" h="2px" />
-          <Text fontSize="sm" fontWeight="bold" color="gray.800">
-            ABOUT US
-          </Text>
-        </HStack>
+      <Stack spacing="6" w={["full", "full", "75%"]} py="100px">
+        <SmallTitleWithBar title="ABOUT US" />
         <Heading
           fontSize={["3xl", "3xl", "4xl"]}
           fontWeight="bold"
