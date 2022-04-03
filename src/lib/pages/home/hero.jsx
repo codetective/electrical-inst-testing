@@ -65,7 +65,7 @@ export default function Hero() {
                     <a>
                       <Button
                         bg={"brand.300"}
-                        rounded="md"
+                        rounded="full"
                         color="white"
                         textTransform={"uppercase"}
                         px={"40px"}

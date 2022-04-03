@@ -38,7 +38,7 @@ const acItemsList = [
 export default function FeaturesAndNumbers() {
   return (
     <WrapContent>
-      <SimpleGrid columns={[1, 1, 2]} py="40px" spacing="40px">
+      <SimpleGrid columns={[1, 1, 2]} py="80px" spacing="40px">
         <Stack spacing={"5"}>
           <Box>
             <SmallHorizontalBar mb="5" />

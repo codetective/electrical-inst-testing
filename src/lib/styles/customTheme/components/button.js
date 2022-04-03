@@ -1,6 +1,6 @@
 const Button = {
   baseStyle: {
-    borderRadius: "md",
+    borderRadius: "full",
     bg: "brand.300",
     _hover: {
       bg: "brand.400",

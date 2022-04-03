@@ -65,7 +65,7 @@ const Header = () => {
                         bg={item.button && "brand.300"}
                         py={item.button && "1"}
                         px={item.button && "3"}
-                        borderRadius={item.button && "md"}
+                        borderRadius={item.button && "full"}
                       >
                         {item.name}
                       </Text>

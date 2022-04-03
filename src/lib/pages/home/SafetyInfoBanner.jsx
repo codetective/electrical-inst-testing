@@ -19,6 +19,7 @@ function SafetyInfoBanner() {
         alignItems={["flex-start", "flex-start", "center"]}
         pt={["40px", "40px", "80px"]}
         mb="40px"
+        mt="40px"
         _before={{
           content: `''`,
           position: "absolute",

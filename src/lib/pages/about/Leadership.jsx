@@ -7,11 +7,13 @@ import {
   Stack,
   Avatar,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
 import WrapContent from "../../layout/WrapContent";
 import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 import SmallTitleWithBar from "../../components/SmallTitleWithBar";
+import Link from "next/link";
 
 function Leadership() {
   return (
@@ -28,7 +30,7 @@ function Leadership() {
             Company Leadership
           </Heading>
         </Box>
-        <SimpleGrid columns={[1, 2]} spacing="10">
+        <SimpleGrid columns={[1, 1, 2]} spacing="10">
           <Card title="Management Team" />
           <Card title="Board of Directors" />
         </SimpleGrid>
@@ -74,7 +76,20 @@ function Card({ title }) {
         </Text>
       </Stack>
       <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-        {/* buttom */}
+        <Link href="/">
+          <Button
+            maxW="fit-content"
+            color="gray.100"
+            textTransform={"uppercase"}
+            fontWeight="bold"
+            bg="brand.300"
+            _hover={{
+              bg: "brand.400",
+            }}
+          >
+            learn more
+          </Button>
+        </Link>
       </Stack>
     </Box>
   );
