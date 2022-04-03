@@ -1,6 +1,8 @@
 import React from "react";
 import PageTitleHero from "../../layout/PageTitleHero";
 import AboutIntro from "./AboutIntro";
+import Details from "./Details";
+import Leadership from "./Leadership";
 
 const pageDetails = {
   title: "About Us",
@@ -13,6 +15,8 @@ export default function About() {
     <>
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <AboutIntro />
+      <Details />
+      <Leadership />
     </>
   );
 }
