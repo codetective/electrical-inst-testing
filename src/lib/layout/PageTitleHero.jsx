@@ -7,9 +7,8 @@ import {
   Container,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
 
-export default function PageTitleHero() {
+export default function PageTitleHero({ tagline, title }) {
   return (
     <Box
       pos="relative"
@@ -39,7 +38,7 @@ export default function PageTitleHero() {
                     fontSize={["2rem", "4rem", "5.5rem", "6rem"]}
                     position={"relative"}
                   >
-                    About Us
+                    {title}
                   </Text>
                   <br />{" "}
                 </Heading>
@@ -51,9 +50,7 @@ export default function PageTitleHero() {
                     color={"gray.100"}
                     fontWeight="bold"
                   >
-                    We are the leading energy technology company. We design,
-                    manufacture and service transformative technologies to help
-                    take energy forward.
+                    {tagline}
                   </Text>
                 </Box>
               </Stack>

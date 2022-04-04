@@ -54,7 +54,7 @@ let navLists = {
     },
     {
       name: "contact us",
-      path: "/contact_us",
+      path: "/contact",
       button: false,
     },
   ],
