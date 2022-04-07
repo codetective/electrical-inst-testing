@@ -1,24 +1,20 @@
 const defaultSEOConfig = {
-  title: "nextarter-chakra",
-  titleTemplate: "%s | nextarter-chakra",
-  defaultTitle: "nextarter-chakra",
-  description: "Next.js + chakra-ui + TypeScript template",
-  canonical: "https://nextarter-chakra.sznm.dev",
+  title: "site title",
+  titleTemplate: "%s | site-name",
+  defaultTitle: "site title",
+  description: "template for site",
+  canonical: "site url",
   openGraph: {
-    url: "https://nextarter-chakra.sznm.dev",
-    title: "nextarter-chakra",
-    description: "Next.js + chakra-ui + TypeScript template",
+    url: "site url",
+    title: "Site name",
+    description: "Engineering and design site",
     images: [
       {
-        url: "https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250",
-        alt: "nextarter-chakra.sznm.dev og-image",
+        url: "image url",
+        alt: "url og-image",
       },
     ],
-    site_name: "nextarter-chakra",
-  },
-  twitter: {
-    handle: "@sozonome",
-    cardType: "summary_large_image",
+    site_name: "site name",
   },
 };
 

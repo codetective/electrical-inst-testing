@@ -49,7 +49,7 @@ let navLists = {
     },
     {
       name: "project portfolio",
-      path: "/project_portfolio",
+      path: "/projects",
       button: false,
     },
     {

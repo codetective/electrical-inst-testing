@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import WrapContent from "../../layout/WrapContent";
+import SEO from "../../components/SEO";
 
 const pageDetails = {
   title: "About Us",
@@ -25,6 +26,8 @@ const pageDetails = {
 export default function About() {
   return (
     <>
+      <SEO title={"About"} desc="about page for site" path="/about_us" />
+
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <AboutIntro />
       <Details />

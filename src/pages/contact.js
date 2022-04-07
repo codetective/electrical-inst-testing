@@ -13,22 +13,17 @@ import {
   Icon,
   Textarea,
   Button,
-  useToast,
   SimpleGrid,
-  HStack,
   SlideFade,
 } from "@chakra-ui/react";
 import { MdContacts, MdSubject } from "react-icons/md";
 import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
-// import axios from "axios";
-import { useState } from "react";
 import PageTitleHero from "../lib/layout/PageTitleHero";
 import SmallTitleWithBar from "../lib/components/SmallTitleWithBar";
 import SectionHeading from "../lib/components/SectionHeading";
 import Link from "next/link";
 import SiteLink from "../lib/components/SiteLink";
-// import BASE_API_URL, { SEOTAGS } from "../core/helpers/config";
-// import { NextSeo } from "next-seo";
+
 const pageDetails = {
   title: "Contact Us",
   tagline:
@@ -38,12 +33,6 @@ const pageDetails = {
 export default function Contact() {
   return (
     <>
-      {/* <NextSeo
-        title={title}
-        description={desc}
-        canonical={url}
-        additionalMetaTags={SEOTAGS(title, desc, url)}
-      /> */}
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <SlideFade in offsetY="40px">
         <Box position="relative" width="100%" pt="40px" pb="80px">

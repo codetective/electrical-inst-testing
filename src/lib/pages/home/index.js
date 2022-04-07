@@ -6,10 +6,12 @@ import SafetyInfoBanner from "./SafetyInfoBanner";
 import { chakra, Box, Stack, Flex, SimpleGrid, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import WrapContent from "../../layout/WrapContent";
+import SEO from "../../components/SEO";
 
 const Home = () => {
   return (
     <>
+      <SEO title={"Welcome"} desc="landing page for site" path="/" />
       <Hero />
       <DisciplineAndProjectCycleSection />
       <FeaturesAndNumbers />
