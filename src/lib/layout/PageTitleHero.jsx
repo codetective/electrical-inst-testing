@@ -46,7 +46,7 @@ export default function PageTitleHero({ tagline, title }) {
                   <Text
                     textShadow="2px 2px 5px black"
                     className="qfont"
-                    fontSize={{ base: "xl", lg: "2xl" }}
+                    fontSize={{ base: "md", lg: "xl" }}
                     color={"gray.100"}
                     fontWeight="bold"
                   >
