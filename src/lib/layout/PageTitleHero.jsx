@@ -22,7 +22,7 @@ export default function PageTitleHero({ tagline, title }) {
       <Box className="bgr">
         <Container maxWidth="container.xl" px={8}>
           <Stack
-            minH={["70vh", "75vh", "80vh"]}
+            minH={["60vh", "60vh", "70vh"]}
             maxH="700px"
             direction={{ base: "column", md: "row" }}
             pt={["10px", "150px"]}
@@ -35,7 +35,7 @@ export default function PageTitleHero({ tagline, title }) {
                     as={"span"}
                     color="gray.100"
                     textShadow="2px 2px 5px black"
-                    fontSize={["2rem", "4rem", "5.5rem", "6rem"]}
+                    fontSize={["2rem", "3rem", "3.5rem", "4rem"]}
                     position={"relative"}
                   >
                     {title}

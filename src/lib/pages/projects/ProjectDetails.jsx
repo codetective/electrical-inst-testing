@@ -63,7 +63,7 @@ export default function ProjectDetails({
     // <WrapContent>
     <Stack
       flexDir={
-        idx % 2 == 0
+        idx % 2 != 0
           ? ["column-reverse", , "row", "row"]
           : [, "column-reverse", "row-reverse", "row-reverse"]
       }
