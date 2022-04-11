@@ -49,30 +49,6 @@ export default function NavDrawer({ isOpen, onClose }) {
                   </Text>
                 </Link>
               ))}
-              {navLists.subNav.map((item, idx) => (
-                <Link href={item.path} key={idx}>
-                  <Text
-                    width={"full"}
-                    as="a"
-                    fontSize="16px"
-                    fontWeight="bold"
-                    textTransform={"uppercase"}
-                    color={item.button ? "white" : "gray.700"}
-                    fontFamily="Montserrat"
-                    cursor={"pointer"}
-                    bg={item.button && "brand.300"}
-                    py={item.button && "1"}
-                    px={item.button && "3"}
-                    borderRadius={item.button && "md"}
-                    transition="all 0.5s ease"
-                    _hover={{
-                      color: item.button ? "" : "#ef682f",
-                    }}
-                  >
-                    {item.name}
-                  </Text>
-                </Link>
-              ))}
             </VStack>
           </DrawerBody>
 
