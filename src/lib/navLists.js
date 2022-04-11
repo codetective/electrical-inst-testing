@@ -28,20 +28,16 @@ let navLists = {
   ],
   mainNav: [
     {
-      name: "what we do",
-      path: "/what_we_do",
+      name: "home",
+      path: "/",
       button: false,
     },
     {
-      name: "how we work",
-      path: "/how_we_work",
+      name: "about us",
+      path: "/about_us",
       button: false,
     },
-    {
-      name: "who we serve",
-      path: "/who_we_serve",
-      button: false,
-    },
+
     {
       name: "why us",
       path: "/why_us",

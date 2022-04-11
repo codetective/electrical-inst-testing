@@ -12,24 +12,24 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <Box pos="relative" className="hero">
+    <Box pos="relative" className="hero" top="-45px">
       <Box className="bgr">
         <Container maxWidth="container.xl" px={8}>
           <Stack
-            minH={["70vh", "80vh", "90vh"]}
+            minH={["90vh", "90vh", "100vh"]}
             maxH="700px"
             direction={{ base: "column", md: "row" }}
             pt={["10px", "150px"]}
             pb={["60px", "40px"]}
           >
-            <Flex flex={1} align={"center"} justify={"flex-start"}>
+            <Flex flex={1} align={"center"} pt="46px" justify={"flex-start"}>
               <Stack spacing={3} w={["full", "full", "80%"]}>
-                <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+                <Heading>
                   <Text
                     as={"span"}
                     color="gray.100"
                     textShadow="2px 2px 5px black"
-                    fontSize={["2rem", "4rem", "5.5rem", "6rem"]}
+                    fontSize={["2rem", "3rem", "4rem", "5rem"]}
                     position={"relative"}
                   >
                     Engineering
@@ -39,7 +39,7 @@ export default function Hero() {
                     as={"span"}
                     color="gray.100"
                     textShadow="2px 2px 5px black"
-                    fontSize={["2rem", "4rem", "5.5rem", "6rem"]}
+                    fontSize={["2rem", "3rem", "4rem", "5rem"]}
                     position={"relative"}
                   >
                     Tomorrow.

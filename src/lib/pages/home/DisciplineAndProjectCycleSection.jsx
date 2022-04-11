@@ -19,7 +19,7 @@ const contentForCards = [
 export default function DisciplineAndProjectCycleSection() {
   return (
     <WrapContent>
-      <Stack pt={["40px", "80px"]} pb="40px" spacing={"10"}>
+      <Stack pt={["40px", "40px"]} pb="40px" spacing={"10"}>
         <Box>
           <SmallHorizontalBar mb="5" />
           <Heading as="h2">

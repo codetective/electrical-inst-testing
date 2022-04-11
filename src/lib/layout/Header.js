@@ -6,22 +6,49 @@ import {
   IconButton,
   useDisclosure,
   useMediaQuery,
+  Icon,
+  Stack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import WrapContent from "./WrapContent";
 import Logo from "./Logo";
-import { BiMenuAltRight } from "react-icons/bi";
+import { GoLocation } from "react-icons/go";
+import { HiOutlineMail } from "react-icons/hi";
+import { BiMenu } from "react-icons/bi";
+import { BsTelephone } from "react-icons/bs";
 import navLists from "../../lib/navLists";
 import NavDrawer from "./NavDrawer";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  const [navbar, setNavbar] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargerThan914] = useMediaQuery("(min-width: 990.5px)");
+  const changeBackground = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 66) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  useEffect(() => {
+    changeBackground();
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
 
   return (
-    <>
+    <Box position={"sticky"} top="-50" zIndex={"10"}>
       {!isLargerThan914 && <NavDrawer isOpen={isOpen} onClose={onClose} />}
-      <Box bg="brand.100" color="gray.200">
+      <Box
+        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.5)" : "black"]}
+        color="gray.200"
+        transition="all .5s ease"
+        display={["none", "none", "block", "block"]}
+      >
         <WrapContent>
           <Flex
             as="header"
@@ -29,59 +56,26 @@ const Header = () => {
             align="center"
             justifyContent={"space-between"}
             py="3"
+            borderBottom={"0.5px solid "}
+            borderBottomColor="rgba(255,255,255,0.2)"
           >
-            <HStack
-              justifyContent={"space-between"}
-              w={["full", "full", "fit-content", "fit-content"]}
-            >
-              <Logo display={["initial", "initial", "initial", "none"]} />
-              <Text
-                display={["none", "initial", "initial", "initial"]}
-                as="h1"
-                fontSize="lg"
-                fontWeight="bolder"
-                color="brand.300"
-              >
-                <Link href="tel:+2349023510969">+234 817 755 2052</Link>
-              </Text>
-            </HStack>
-
-            <HStack>
-              <Box
-                marginLeft="auto"
-                display={["none", "none", "none", "initial"]}
-              >
-                <HStack spacing="4">
-                  {navLists.subNav.map((item, idx) => (
-                    <Link href={item.path} key={idx}>
-                      <Text
-                        as="a"
-                        fontSize="14px"
-                        fontWeight="bold"
-                        textTransform={"uppercase"}
-                        color={item.button ? "white" : "#cccccc"}
-                        fontFamily="Montserrat"
-                        cursor={"pointer"}
-                        bg={item.button && "brand.300"}
-                        py={item.button && "1"}
-                        px={item.button && "3"}
-                        borderRadius={item.button && "full"}
-                      >
-                        {item.name}
-                      </Text>
-                    </Link>
-                  ))}
-                </HStack>
-              </Box>
-              <IconButton
-                onClick={onOpen}
-                display={["initial", "initial", "inital", "none"]}
-                as={BiMenuAltRight}
-                borderRadius="sm"
-                color="gray.200"
-                variant={"link"}
-                cursor="pointer"
-                size="lg"
+            <HStack justifyContent={"space-between"} w="full" spacing="5">
+              <HStack justifyContent={"space-between"} spacing="5">
+                <HeaderInfoText
+                  icon={BsTelephone}
+                  href="tel:+2349023510969"
+                  text="+234 817 755 2052"
+                />
+                <HeaderInfoText
+                  icon={HiOutlineMail}
+                  href="mailto:mailaddress"
+                  text="info@mail.domain"
+                />
+              </HStack>
+              <HeaderInfoText
+                icon={GoLocation}
+                href="maps.google.com"
+                text="56, suit 799, melborne, Australia"
               />
             </HStack>
           </Flex>
@@ -89,30 +83,35 @@ const Header = () => {
       </Box>
 
       <Box
-        className="mainNavGradient"
-        color="white"
-        display={["none", "none", "none", "initial"]}
+        color="gray.100"
+        display={"block"}
         position="absolute"
         left="0"
+        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.5)" : "black"]}
         zIndex={"10"}
+        shadow="lg"
         w="full"
+        transition="all .5s ease"
       >
         <WrapContent>
-          <HStack justifyContent={"space-between"} w="full" py="3">
-            <Logo h="100px" />
+          <Stack
+            flexDir={["row", "row", "column", "row"]}
+            justifyContent={"space-between"}
+            w="full"
+            py="3"
+          >
+            <Logo h="50px" />
 
-            <Box marginLeft="auto">
+            <Box marginLeft="auto" display={["none", "none", "block", "block"]}>
               <HStack spacing="5">
                 {navLists.mainNav.map((item, idx) => (
                   <Link href={item.path} key={idx}>
                     <Text
                       className="hover-underline-animation"
                       as="a"
-                      fontSize="14px"
-                      pb="2"
                       fontWeight="bold"
-                      textTransform={"uppercase"}
-                      fontFamily="Montserrat"
+                      textTransform={"capitalize"}
+                      fontFamily="Poppins"
                       cursor={"pointer"}
                       textAlign="center"
                     >
@@ -122,11 +121,44 @@ const Header = () => {
                 ))}
               </HStack>
             </Box>
-          </HStack>
+            <IconButton
+              onClick={onOpen}
+              display={["initial", "initial", "none", "none"]}
+              as={BiMenu}
+              borderRadius="sm"
+              color="gray.200"
+              variant={"link"}
+              cursor="pointer"
+              size="md"
+            />
+          </Stack>
         </WrapContent>
       </Box>
-    </>
+    </Box>
   );
 };
 
 export default Header;
+
+function HeaderInfoText({ icon, text, href }) {
+  return (
+    <Link href={href}>
+      <Text
+        as="a"
+        _hover={{
+          color: "blue.500",
+        }}
+        fontSize="14px"
+        fontWeight="light"
+        color="gray.100"
+        fontFamily={"Poppins"}
+        cursor="pointer"
+      >
+        <HStack spacing="1">
+          {icon && <Icon as={icon} />}
+          <Text>{text}</Text>
+        </HStack>
+      </Text>
+    </Link>
+  );
+}

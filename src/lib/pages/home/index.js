@@ -29,7 +29,7 @@ function CTA() {
     <Flex bg="#030b2af2" w="full" alignItems="center" justifyContent="center">
       <WrapContent>
         <SimpleGrid
-          maxW="7xl"
+          maxW="100%"
           w={{ md: "3xl", lg: "4xl" }}
           alignItems="center"
           columns={{ base: 1, lg: 2, xl: 3 }}
