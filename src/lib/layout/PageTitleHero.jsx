@@ -18,6 +18,7 @@ export default function PageTitleHero({ tagline, title }) {
       bgPos={"center"}
       bgColor="gray.700"
       bgBlendMode={"overlay"}
+      top="-46px"
     >
       <Box className="bgr">
         <Container maxWidth="container.xl" px={8}>

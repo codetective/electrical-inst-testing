@@ -12,8 +12,6 @@ import WrapContent from "../../layout/WrapContent";
 // }
 
 import {
-  Container,
-  SimpleGrid,
   Image,
   Flex,
   Heading,
@@ -22,8 +20,6 @@ import {
   StackDivider,
   Icon,
   useColorModeValue,
-  Box,
-  VStack,
 } from "@chakra-ui/react";
 import { IoLocationSharp, IoSearchSharp } from "react-icons/io5";
 import { BiCategoryAlt } from "react-icons/bi";

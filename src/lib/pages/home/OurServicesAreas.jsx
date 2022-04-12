@@ -1,53 +1,52 @@
 import { Heading, SimpleGrid, Stack, Text, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
-import SmallHorizontalBar from "../../components/SmallHorizontalBar";
+import SectionHeading from "../../components/SectionHeading";
 import WrapContent from "../../layout/WrapContent";
 const contentForCards = [
   {
-    heading: "heading fot this card here",
+    heading: "Installation and maintenance",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to m",
-    link: "/link",
+    link: "/installation_and_maintenance",
   },
   {
-    heading: "heading fot this card here",
+    heading: "Instrumentation and testing of equipment",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to m",
     link: "/link",
   },
 ];
 
-export default function DisciplineAndProjectCycleSection() {
+export default function OurServicesAreas() {
   return (
-    <WrapContent>
-      <Stack pt={["40px", "40px"]} pb="40px" spacing={"10"}>
-        <Box>
-          <SmallHorizontalBar mb="5" />
-          <Heading as="h2">
-            lorem ipsum toreta about <br /> what the oufit engages in
-          </Heading>
-          <Text>
-            {" "}
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s,
-            <br /> when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book
-          </Text>
-        </Box>
-        <SimpleGrid columns={[1, 1, 2]} spacing="10">
-          {contentForCards.map((c, i) => {
-            return (
-              <CardBox
-                heading={c.heading}
-                text={c.text}
-                link={c.link}
-                key={i}
-              />
-            );
-          })}
-          {/* end of card one */}
-        </SimpleGrid>
-      </Stack>
-    </WrapContent>
+    <Box bg="gray.50">
+      <WrapContent>
+        <Stack py="60px" spacing={"10"}>
+          <Stack spacing="5">
+            <SectionHeading text="Services we offer" />
+            <Text>
+              {" "}
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s,
+              <br /> when an unknown printer took a galley of type and scrambled
+              it to make a type specimen book
+            </Text>
+          </Stack>
+          <SimpleGrid columns={[1, 1, 2]} spacing="10">
+            {contentForCards.map((c, i) => {
+              return (
+                <CardBox
+                  heading={c.heading}
+                  text={c.text}
+                  link={c.link}
+                  key={i}
+                />
+              );
+            })}
+            {/* end of card one */}
+          </SimpleGrid>
+        </Stack>
+      </WrapContent>
+    </Box>
   );
 }
 

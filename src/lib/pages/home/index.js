@@ -1,19 +1,21 @@
 import Hero from "./hero";
 import TestimonyMarquee from "./TestimonyMarquee";
-import DisciplineAndProjectCycleSection from "./DisciplineAndProjectCycleSection";
+import OurServicesAreas from "./OurServicesAreas";
 import FeaturesAndNumbers from "./FeaturesAndNumbers";
 import SafetyInfoBanner from "./SafetyInfoBanner";
 import { chakra, Box, Stack, Flex, SimpleGrid, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import WrapContent from "../../layout/WrapContent";
 import SEO from "../../components/SEO";
+import AboutSection from "./AboutSection";
 
 const Home = () => {
   return (
     <>
       <SEO title={"Welcome"} desc="landing page for site" path="/" />
       <Hero />
-      <DisciplineAndProjectCycleSection />
+      <AboutSection />
+      <OurServicesAreas />
       <FeaturesAndNumbers />
       <SafetyInfoBanner />
       <TestimonyMarquee />

@@ -13,7 +13,7 @@ import WrapContent from "../../layout/WrapContent";
 
 export default function Details() {
   return (
-    <Box bg={"gray.800"} position={"relative"} py="10">
+    <Box bg={"gray.800"} position={"relative"}>
       <WrapContent>
         <Flex
           flex={1}

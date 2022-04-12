@@ -23,7 +23,7 @@ export default function Hero() {
             pb={["60px", "40px"]}
           >
             <Flex flex={1} align={"center"} pt="46px" justify={"flex-start"}>
-              <Stack spacing={3} w={["full", "full", "80%"]}>
+              <Stack spacing={4} w={["full", "full", "80%"]}>
                 <Heading>
                   <Text
                     as={"span"}

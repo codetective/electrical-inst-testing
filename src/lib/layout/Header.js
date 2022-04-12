@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <Box position={"sticky"} top="-50" zIndex={"10"}>
+    <Box position={"sticky"} top="-50" zIndex={"11"}>
       {!isLargerThan914 && <NavDrawer isOpen={isOpen} onClose={onClose} />}
       <Box
         bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.5)" : "black"]}

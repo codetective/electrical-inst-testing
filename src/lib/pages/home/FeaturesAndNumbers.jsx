@@ -20,6 +20,7 @@ import {
 import WrapContent from "../../layout/WrapContent";
 import Link from "next/link";
 import SmallHorizontalBar from "../../components/SmallHorizontalBar";
+import SectionHeading from "../../components/SectionHeading";
 const acItemsList = [
   {
     title: " item atrrribute totle",
@@ -40,29 +41,23 @@ export default function FeaturesAndNumbers() {
     <WrapContent>
       <SimpleGrid columns={[1, 1, 2]} py="80px" spacing="40px">
         <Stack spacing={"5"}>
-          <Box>
-            <SmallHorizontalBar mb="5" />
+          <Stack spacing="5">
+            <SmallHorizontalBar />
 
-            <Heading as="h2">
-              lorem ipsum toreta about what the oufit engages in
-            </Heading>
+            <SectionHeading text="Our achievements so far..." />
             <Text>
               {" "}
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book
             </Text>
-          </Box>
-          <Accordion allowToggle>
+          </Stack>
+          {/* <Accordion allowToggle>
             {acItemsList.map((a, i) => {
               return <ACItem item={a} key={i} />;
             })}
-          </Accordion>
-          <Text>
-            {" "}
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s,
-          </Text>
+          </Accordion> */}
+
           <Link href={"/"}>
             <Text
               as="a"
@@ -95,7 +90,7 @@ export default function FeaturesAndNumbers() {
               numbers we're proud of
             </Text>
           </Box>
-          <SimpleGrid columns="2" spacing={["5", "10"]}>
+          <SimpleGrid columns={2} spacingX="30px" spacingY={"30px"}>
             <GridItem
               icon={FcFactory}
               title="56m"
@@ -140,6 +135,36 @@ export default function FeaturesAndNumbers() {
               icon={FcFactory}
               title="56m"
               text=" sq ft of industrial building layout"
+            />
+            <StatCard
+              icon={FcFactory}
+              title="projects completed"
+              stat={"100+"}
+            />
+            <StatCard
+              icon={FcFactory}
+              title="projects completed"
+              stat={"100+"}
+            />
+            <StatCard
+              icon={FcFactory}
+              title="projects completed"
+              stat={"100+"}
+            />
+            <StatCard
+              icon={FcFactory}
+              title="projects completed"
+              stat={"100+"}
+            />
+            <StatCard
+              icon={FcFactory}
+              title="projects completed"
+              stat={"100+"}
+            />
+            <StatCard
+              icon={FcFactory}
+              title="projects completed"
+              stat={"100+"}
             />
           </SimpleGrid>
         </Stack>
@@ -196,8 +221,8 @@ function ACItem({ item }) {
 
 function GridItem({ icon, title, text }) {
   return (
-    <Flex flexDir={{ base: "column", md: "column", lg: "row" }} spacing="0">
-      <Icon as={icon} color="brand.300" fontSize="56px" />
+    <Flex flexDir={{ base: "column", md: "column", lg: "row" }} spacing="5">
+      <Icon as={icon} color="brand.300" fontSize="50px" mr="5" />
       <Stack>
         <Heading
           fontWeight={"bolder"}
@@ -218,5 +243,29 @@ function GridItem({ icon, title, text }) {
         </Text>
       </Stack>
     </Flex>
+  );
+}
+
+function StatCard({ icon, title, stat }) {
+  return (
+    <Stack shadow="xl" spacing="3" p="5" rounded="xl">
+      <Icon as={icon} color="green" fontSize="40px" />
+      <Heading
+        color="gray.500"
+        fontFamily="Poppins"
+        textTransform={"capitalize"}
+        fontSize="13px"
+      >
+        {title}
+      </Heading>
+      <Text
+        fontWeight={"bolder"}
+        color="brand.400"
+        textTransform={"uppercase"}
+        fontSize="2xl"
+      >
+        {stat}
+      </Text>
+    </Stack>
   );
 }
