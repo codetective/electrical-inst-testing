@@ -15,6 +15,7 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import SectionHeading from "../../components/SectionHeading";
 import PageTitleHero from "../../layout/PageTitleHero";
 import WrapContent from "../../layout/WrapContent";
+import ServicesLinkBox from "./ServicesLinkBox";
 
 function Instrumentation() {
   return (
@@ -27,34 +28,29 @@ function Instrumentation() {
         <Stack
           flexDir={["column-reverse", "column-reverse", "row"]}
           // spacing="10"
-          py="40px"
+          pt="40px"
+          pb="60px"
         >
-          <Box w={["100%", "100%", "30%"]}>
-            <List spacing={"5"}>
-              <ListItem>Lorem ipsum dolor sit amet</ListItem>
-              <ListItem>Consectetur adipiscing elit</ListItem>
-              <ListItem>Integer molestie lorem at massa</ListItem>
-              <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-            </List>
-          </Box>
-          <Stack spacing="8" w={["100%", "100%", "70%"]}>
+          <ServicesLinkBox />
+
+          <Stack spacing="8" w={["100%", "100%", "70%"]} pb="10">
             <SimpleGrid columns={[1, 2, 2]} spacing="10">
               <Image
                 alt={"feature image"}
                 w="full"
                 h="full"
-                src={"/images/pj1.jpg"}
+                src={"/images/pj3.jpg"}
                 objectFit={"cover"}
               />
               <Image
                 alt={"feature image"}
                 w="full"
                 h="full"
-                src={"/images/pj2.jpg"}
+                src={"/images/pj4.jpg"}
                 objectFit={"cover"}
               />
             </SimpleGrid>
-            <SectionHeading text={"Efficient Installation service"} />
+            <SectionHeading text={"Excellent Instrumentation service"} />
             <Text color="gray.600">
               Leverage agile frameworks to provide a robust synopsis for high
               level overviews. Iterative approaches to corporate strategy foster

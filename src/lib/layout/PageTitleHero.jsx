@@ -18,16 +18,16 @@ export default function PageTitleHero({ tagline, title }) {
       bgPos={"center"}
       bgColor="gray.700"
       bgBlendMode={"overlay"}
-      top="-46px"
+      top={["0", "0", "0", "-46px"]}
     >
-      <Box className="bgr">
+      <Box>
         <Container maxWidth="container.xl" px={8}>
           <Stack
-            minH={["60vh", "60vh", "70vh"]}
-            maxH="700px"
+            minH={["70vh", "60vh", "70vh"]}
+            // maxH="700px"
             direction={{ base: "column", md: "row" }}
-            pt={["10px", "150px"]}
-            pb={["60px", "40px"]}
+            pt={["100px", "150px"]}
+            pb={["40px", "40px"]}
           >
             <Flex flex={1} align={"center"} justify={"flex-start"}>
               <Stack spacing={3} w={["full", "full", "80%"]}>

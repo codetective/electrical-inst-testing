@@ -15,6 +15,8 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import SectionHeading from "../../components/SectionHeading";
 import PageTitleHero from "../../layout/PageTitleHero";
 import WrapContent from "../../layout/WrapContent";
+import NavLink from "../../components/NavLink";
+import ServicesLinkBox from "./ServicesLinkBox";
 
 function Installation_and_maintenance() {
   return (
@@ -29,15 +31,8 @@ function Installation_and_maintenance() {
           // spacing="10"
           py="40px"
         >
-          <Box w={["100%", "100%", "30%"]}>
-            <List spacing={"5"}>
-              <ListItem>Lorem ipsum dolor sit amet</ListItem>
-              <ListItem>Consectetur adipiscing elit</ListItem>
-              <ListItem>Integer molestie lorem at massa</ListItem>
-              <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-            </List>
-          </Box>
-          <Stack spacing="8" w={["100%", "100%", "70%"]}>
+          <ServicesLinkBox />
+          <Stack spacing="8" w={["100%", "100%", "70%"]} pb="10">
             <SimpleGrid columns={[1, 2, 2]} spacing="10">
               <Image
                 alt={"feature image"}
