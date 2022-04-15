@@ -114,7 +114,7 @@ export default function Contact() {
                             <Icon
                               as={MdContacts}
                               fontSize="24px"
-                              color="brand.400"
+                              color="brand.300"
                             />
                           }
                         />
@@ -127,7 +127,7 @@ export default function Contact() {
                           required
                           pl="45px"
                           rounded="full"
-                          bg="white"
+                          bg="gray.100"
                         />
                       </InputGroup>
                     </FormControl>
@@ -143,7 +143,7 @@ export default function Contact() {
                             <Icon
                               as={MdSubject}
                               fontSize="24px"
-                              color="brand.400"
+                              color="brand.300"
                             />
                           }
                         />
@@ -156,7 +156,7 @@ export default function Contact() {
                           className="afont"
                           pl="45px"
                           rounded="full"
-                          bg="white"
+                          bg="gray.100"
                         />
                       </InputGroup>
                     </FormControl>
@@ -171,7 +171,7 @@ export default function Contact() {
                             <Icon
                               as={FaEnvelope}
                               fontSize="24px"
-                              color="brand.400"
+                              color="brand.300"
                             />
                           }
                         />
@@ -184,7 +184,7 @@ export default function Contact() {
                           className="afont"
                           rounded="full"
                           required
-                          bg="white"
+                          bg="gray.100"
                         />
                       </InputGroup>
                     </FormControl>
@@ -194,24 +194,25 @@ export default function Contact() {
                       className="afont"
                       required
                       minH="140px"
+                      bg="gray.100"
                       placeholder="Write your message. Please be concise and include as muchh information as necessary: don't include any private information"
                     />
                     <Button
-                      size="md"
+                      size="lg"
                       rounded="34px"
                       type="submit"
                       color="white"
                       // disabled={sending}
                       // isLoading={sending}
-                      bg="primary.100"
+                      bg="brand.400"
                       _hover={{
-                        bg: "primary.200",
+                        bg: "brand.300",
                       }}
                       px={"40px"}
                       className="afont"
                       w="full"
                     >
-                      Submit
+                      Submit response
                     </Button>
                   </Stack>
                 </Box>

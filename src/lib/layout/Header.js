@@ -75,7 +75,9 @@ const Header = () => {
               <HeaderInfoText
                 icon={GoLocation}
                 href="maps.google.com"
-                text="56, suit 799, melborne, Australia"
+                text="1738 Address Road
+
+                City, State"
               />
             </HStack>
           </Flex>
