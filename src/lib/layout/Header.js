@@ -44,8 +44,7 @@ const Header = () => {
     <Box position={"sticky"} top={[0, 0, "-50"]} zIndex={"11"}>
       {!isLargerThan914 && <NavDrawer isOpen={isOpen} onClose={onClose} />}
       <Box
-        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.5)" : "black"]}
-        color="gray.200"
+        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.01)" : "black"]}
         transition="all .5s ease"
         display={["none", "none", "block", "block"]}
       >
@@ -85,15 +84,20 @@ const Header = () => {
       </Box>
 
       <Box
-        color="gray.100"
         display={"block"}
         position="absolute"
         left="0"
-        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.5)" : "black"]}
+        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.0)" : "black"]}
         zIndex={"10"}
-        shadow="lg"
+        color={[
+          "gray.200",
+          "gray.200",
+          "gray.200",
+          !navbar ? "gray.100" : "gray.200",
+        ]}
         w="full"
         transition="all .5s ease"
+        textShadow="2px 2px 5px black"
       >
         <WrapContent>
           <Stack
@@ -152,7 +156,7 @@ function HeaderInfoText({ icon, text, href }) {
         }}
         fontSize="14px"
         fontWeight="light"
-        color="gray.100"
+        color={["gray.200", "brand.400"]}
         fontFamily={"Poppins"}
         cursor="pointer"
       >

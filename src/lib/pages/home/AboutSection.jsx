@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function AboutSection() {
   return (
     <WrapContent>
-      <SimpleGrid columns={[1, 1, 2]} py="60px" spacing="20">
+      <SimpleGrid columns={[1, 1, 2]} py="40px" spacing="20">
         <Stack spacing="5">
           <Box>
             <SmallHorizontalBar mb="5" />

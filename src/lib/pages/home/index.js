@@ -8,12 +8,15 @@ import Link from "next/link";
 import WrapContent from "../../layout/WrapContent";
 import SEO from "../../components/SEO";
 import AboutSection from "./AboutSection";
+import NewHero from "./NewHero";
 
 const Home = () => {
   return (
     <>
       <SEO title={"Welcome"} desc="landing page for site" path="/" />
-      <Hero />
+      <NewHero />
+      {/* <Hero /> */}
+
       <AboutSection />
       <OurServicesAreas />
       <FeaturesAndNumbers />

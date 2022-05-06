@@ -1,6 +1,6 @@
 const fonts = {
   body: "'Raleway', sans-serif",
-  heading: "'Montserrat','Varela Round', serif",
+  heading: "'Poppins','Varela Round', serif",
 };
 
 export default fonts;
