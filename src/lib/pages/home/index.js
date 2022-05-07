@@ -1,5 +1,4 @@
 import Hero from "./hero";
-import TestimonyMarquee from "./TestimonyMarquee";
 import OurServicesAreas from "./OurServicesAreas";
 import FeaturesAndNumbers from "./FeaturesAndNumbers";
 import SafetyInfoBanner from "./SafetyInfoBanner";
@@ -20,8 +19,7 @@ const Home = () => {
       <AboutSection />
       <OurServicesAreas />
       <FeaturesAndNumbers />
-      <SafetyInfoBanner />
-      <TestimonyMarquee />
+      {/* <SafetyInfoBanner /> */}
       <CTA />
     </>
   );

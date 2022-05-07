@@ -1,28 +1,72 @@
-import { Heading, SimpleGrid, Stack, Text, Box } from "@chakra-ui/react";
+import {
+  chakra,
+  SimpleGrid,
+  Stack,
+  Text,
+  Box,
+  Icon,
+  Flex,
+  Button,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import { FiArrowDown } from "react-icons/fi";
 import SectionHeading from "../../components/SectionHeading";
 import WrapContent from "../../layout/WrapContent";
 const contentForCards = [
   {
-    heading: "Installation and maintenance",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to m",
+    heading: "Supply, installation, maintenance and calibration of:",
     link: "/installation_and_maintenance",
+    content: [
+      "Pneumatics devices and switches.",
+      "HART devices such as Pressure transmitters,",
+      "Foundation Fieldbus devices, Systems and packages",
+      "GE sensing instruments and Flow Meters",
+      "Fire and Gas detection systems",
+    ],
   },
   {
-    heading: "Instrumentation and testing of equipment",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to m",
+    heading: "Facility installation and commissioning, via:",
     link: "/instrumentation",
+    content: [
+      "Implementation of P&ID and PEFs from design stage",
+      "Supply and Implementation of design strategies for facilities",
+      "Carryout project modification, loop checks and function testing.",
+      "Provide high level technical support.",
+      "Periodic Intervention Campaigns for Facility Maintenance and Upgrade.",
+    ],
+  },
+  {
+    heading: "Fire and gas services:",
+    link: "/instrumentation",
+    content: [
+      "Supply and installation of Fire fighting systems,",
+      " Voice Evacuation Systems such as PAGA systems,",
+      "Advance automated fire detection and alarm systems,",
+      "Fire and Gas RIM SEAL Detection systems, and",
+      " Rescue and safety Facility ",
+    ],
+  },
+  {
+    heading: "Other services",
+    link: "/instrumentation",
+    content: [
+      "Procurement",
+      "Calibration services",
+      "Project Management Inspection",
+      "Non Destructive Testing (NDT)",
+      "Equipment hiring and Rentals",
+    ],
   },
 ];
 
 export default function OurServicesAreas() {
   return (
-    <Box bg="gray.50">
+    <Box bg="gray.50" id="services">
       <WrapContent>
         <Stack py="60px" spacing={"10"}>
           <Stack spacing="5">
-            <SectionHeading text="Services we offer" />
+            <SectionHeading text="What we do" />
             <Text>
               {" "}
               Lorem Ipsum has been the industry's standard dummy text ever since
@@ -31,7 +75,7 @@ export default function OurServicesAreas() {
               it to make a type specimen book
             </Text>
           </Stack>
-          <SimpleGrid columns={[1, 1, 2]} spacing="10">
+          <SimpleGrid columns={[1, 1, 1, 2]} spacing="10">
             {contentForCards.map((c, i) => {
               return (
                 <CardBox
@@ -39,62 +83,98 @@ export default function OurServicesAreas() {
                   text={c.text}
                   link={c.link}
                   key={i}
+                  idx={i}
+                  content={c.content}
                 />
               );
             })}
-            {/* end of card one */}
+            {/* end of cards */}
           </SimpleGrid>
+          <Link href="/about_us">
+            <a
+              style={{
+                width: "fit-content",
+                display: "block",
+                marginInline: "auto",
+              }}
+            >
+              <Button
+                rounded="full"
+                bg="brand.300"
+                color="white"
+                size="lg"
+                px={"40px"}
+                fontSize="xl"
+                fontWeight="bold"
+                _hover={{
+                  bg: "brand.400",
+                  color: "white",
+                }}
+                rightIcon={<FiArrowDown />}
+              >
+                see full list
+              </Button>
+            </a>
+          </Link>
         </Stack>
       </WrapContent>
     </Box>
   );
 }
 
-function CardBox({ heading, text, link }) {
+function CardBox({ heading, content, link, idx = 1 }) {
+  let c = "'";
   return (
     <Stack
       rounded="md"
       shadow="lg"
       spacing="5"
-      p="6"
+      pt="10"
+      pb="6"
+      px={[5, 8]}
       position={"relative"}
       _before={{
-        content: `''`,
-        height: "100%",
-        width: "5px",
-        backgroundColor: "#ef682f",
+        content: c + (idx + 1) + c,
+        height: "50px",
+        width: "50px",
+        // backgroundColor: "#ef682f",
+        backgroundColor: "brand.400",
         position: "absolute",
-        top: "0",
-        left: "0",
-        borderTopLeftRadius: "10px",
-        borderBottomLeftRadius: "10px",
+        top: "-3",
+        left: "-3",
+        borderRadius: "50%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        fontSize: "20px",
+        fontWeight: "bold",
       }}
     >
       <Text
         as="h3"
-        textTransform={"capitalize"}
-        fontWeight="bold"
-        fontSize={"19px"}
+        fontWeight="light"
+        fontSize={["xl", "2xl"]}
         fontFamily="Montserrat"
       >
         {heading}
       </Text>
-      <Text>{text}</Text>
-
-      <Link href={link}>
-        <Text
-          as="a"
-          fontSize="14px"
-          fontWeight="bold"
-          textTransform={"uppercase"}
-          color="brand.300"
-          fontFamily="Montserrat"
-          cursor={"pointer"}
-          width="fit-content"
-        >
-          READ MORE
-        </Text>
-      </Link>
+      {content && content.map((c, i) => <Feature key={i}>{c}</Feature>)}
     </Stack>
   );
 }
+
+const Feature = (props) => {
+  return (
+    <Flex>
+      <Icon boxSize={5} mt={1} mr={2} viewBox="0 0 20 20" fill="currentColor">
+        <path
+          fillRule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clipRule="evenodd"
+        ></path>
+      </Icon>
+      <chakra.p fontSize="md" {...props} />
+    </Flex>
+  );
+};

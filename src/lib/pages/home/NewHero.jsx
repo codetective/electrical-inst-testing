@@ -74,24 +74,32 @@ function NewHero() {
                     </Button>
                   </a>
                 </Link>
-                <Link href="/about_us">
-                  <a>
-                    <Button
-                      rounded="full"
-                      color="brand.400"
-                      bg="transparent"
-                      px={"40px"}
-                      fontWeight="bold"
-                      _hover={{
-                        bg: "brand.400",
-                        color: "white",
-                      }}
-                      rightIcon={<FiArrowDown />}
-                    >
-                      Explore
-                    </Button>
-                  </a>
-                </Link>
+                <a>
+                  <Button
+                    rounded="full"
+                    color="brand.400"
+                    bg="transparent"
+                    px={"40px"}
+                    fontWeight="bold"
+                    _hover={{
+                      bg: "brand.400",
+                      color: "white",
+                    }}
+                    rightIcon={<FiArrowDown />}
+                    onClick={() => {
+                      var elem =
+                        window && window.document.querySelector("#services");
+
+                      elem.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                        inline: "nearest",
+                      });
+                    }}
+                  >
+                    Explore
+                  </Button>
+                </a>
               </SimpleGrid>
             </Box>
           </Flex>

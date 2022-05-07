@@ -12,18 +12,20 @@ export default function AboutSection() {
         <Stack spacing="5">
           <Box>
             <SmallHorizontalBar mb="5" />
-            <SectionHeading text="About Us" />
+            <SectionHeading text="Who we are" />
           </Box>
           <Text fontWeight="semibold">
-            Leverage agile frameworks to provide a robust synopsis for high
-            level overviews. Iterative approaches to corporate strategy foster
-            collaborative thinking.
+            Established in 2002, AVETRIX is duly incorporated in Nigeria as an
+            integrated Engineering firm offering strategic Engineering Services
+            to the Oil & Gas sector, Manufacturing, Construction, Maritime,
+            Industries and Government establishments.
           </Text>
           <Text fontSize={"15px"} color="gray.600">
-            Osed quia consequuntur magni dolores eos qui ratione voluptatem
-            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci sed quia non numquam qui
-            ratione voluptatem sequi nesciunt. Neque porro quisquam est.
+            We utilise advanced technologies to serve our clients looking for
+            efficient and more reliable services in different areas such as
+            installation and maintenance of special electrical equipment. Our
+            wealth of experience acquired over the years help us deliver beyond
+            expectations.
           </Text>
           <Link href="/about_us">
             <a>
