@@ -9,6 +9,7 @@ import SEO from "../../components/SEO";
 import AboutSection from "./AboutSection";
 import NewHero from "./NewHero";
 import Projects from "./Projects";
+import OurApproach from "./OurApproach";
 
 const Home = () => {
   return (
@@ -20,8 +21,8 @@ const Home = () => {
       <AboutSection />
       <OurServicesAreas />
       <Projects />
-      <FeaturesAndNumbers />
-      {/* <SafetyInfoBanner /> */}
+      {/* <FeaturesAndNumbers /> */}
+      <OurApproach />
       <CTA />
     </>
   );
