@@ -13,11 +13,32 @@ import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 import SectionHeading from "../../components/SectionHeading";
 import { FiArrowUpRight } from "react-icons/fi";
 
+const projects = [
+  {
+    caption:
+      "Revalidation and Verification of flow computers on a control console.",
+    image: "/images/pj/controlpanel.jpg",
+  },
+  {
+    caption: "Foundation fieldbus junction box termination and configuration.",
+    image: "/images/pj/fieldbusinstallation.jpg",
+  },
+  {
+    caption: "Chemical Injection packages installed and commissioned.",
+    image: "/images/pj/chemicalinjectionplant.jpg",
+  },
+  {
+    caption:
+      "The shut-down valve and all regulators serviced and installed successfully.",
+    image: "/images/pj/shutdown.jpg",
+  },
+];
+
 function Projects() {
   return (
     <Box bg="brand.500" id="services" color="white">
       <WrapContent>
-        <SimpleGrid columns={[1, 1, 2]} py="80px" spacing="40px">
+        <SimpleGrid columns={[1, 1, 2, 2]} py="80px" spacing="40px">
           <Stack spacing={"8"}>
             <Stack spacing="5">
               <SmallHorizontalBar />
@@ -43,12 +64,12 @@ function Projects() {
                 WHY US?
               </Text>
             </Link>
-            <Pcard />
-            <Pcard />
+            <Pcard c={projects[2].caption} i={projects[2].image} />
+            <Pcard c={projects[1].caption} i={projects[1].image} />
           </Stack>
           <Stack spacing="8">
-            <Pcard />
-            <Pcard />
+            <Pcard c={projects[3].caption} i={projects[3].image} />
+            <Pcard c={projects[0].caption} i={projects[0].image} />
             <Stack spacing="5" p="5">
               <Text>
                 Customer reliability and consistently high quality services are
@@ -67,8 +88,8 @@ function Projects() {
                     bg="brand.300"
                     color="white"
                     size="lg"
-                    px={"40px"}
-                    fontSize="xl"
+                    px={["20px", "40px"]}
+                    fontSize={["md", "xl"]}
                     fontWeight="bold"
                     _hover={{
                       bg: "brand.400",
@@ -90,33 +111,27 @@ function Projects() {
 
 export default Projects;
 
-function Pcard(image, caption, type) {
+function Pcard(props) {
+  console.log(props);
+
   return (
-    <Box pos="relative" rounded="lg" maxH={["320px", "350px", "350px"]}>
-      <Image
-        src={"https://source.unsplash.com/random/" + Math.random() * 9}
-        objectFit={"cover"}
-        h="100%"
-        rounded="lg"
-        w="full"
-      />
+    <Box pos="relative" rounded="lg" h={["320px", "350px", "380px", "350px"]}>
+      <Image src={props.i} objectFit={"cover"} h="100%" rounded="lg" w="full" />
       <Box
         pos="absolute"
         right="0"
-        bottom="5"
+        bottom="4"
         bg="blackAlpha.500"
         color="white"
         fontSize="sm"
         fontWeight="bold"
         p="5"
-        w="80%"
+        w={["100%", "80%"]}
         backdropFilter={"blur(10px)"}
         borderTopLeftRadius="lg"
       >
-        <Text as="h2">Installation</Text>
-        <Text>
-          Installation og jredsn dsiisd dijdjdj djididid ddiidjijd didididid
-        </Text>
+        {/* <Text as="h2">Installation</Text> */}
+        <Text>{props.c}</Text>
       </Box>
     </Box>
   );

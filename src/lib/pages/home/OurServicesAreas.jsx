@@ -68,11 +68,10 @@ export default function OurServicesAreas() {
           <Stack spacing="5">
             <SectionHeading text="What we do" />
             <Text>
-              {" "}
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s,
-              <br /> when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book
+              As an integrated Engineering firm, we offer strategic Engineering
+              Services to <br />
+              the Oil & Gas sector, Manufacturing, Construction, Maritime,
+              Industries and Government establishments.
             </Text>
           </Stack>
           <SimpleGrid columns={[1, 1, 1, 2]} spacing="10">
@@ -122,7 +121,7 @@ export default function OurServicesAreas() {
   );
 }
 
-function CardBox({ heading, content, link, idx = 1 }) {
+function CardBox({ heading, content, idx = 1 }) {
   let c = "'";
   return (
     <Stack
