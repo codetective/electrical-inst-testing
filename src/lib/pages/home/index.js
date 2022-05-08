@@ -8,6 +8,7 @@ import WrapContent from "../../layout/WrapContent";
 import SEO from "../../components/SEO";
 import AboutSection from "./AboutSection";
 import NewHero from "./NewHero";
+import Projects from "./Projects";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
 
       <AboutSection />
       <OurServicesAreas />
+      <Projects />
       <FeaturesAndNumbers />
       {/* <SafetyInfoBanner /> */}
       <CTA />
