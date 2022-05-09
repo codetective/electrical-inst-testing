@@ -4,6 +4,7 @@ import WrapContent from "../../layout/WrapContent";
 import SectionHeading from "../../components/SectionHeading";
 import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 import Link from "next/link";
+import AnimateInView from "../../components/motion/AnimateInView";
 
 export default function AboutSection() {
   return (
@@ -45,13 +46,22 @@ export default function AboutSection() {
           </Link>
         </Stack>
 
-        <Image
-          alt={"feature image"}
-          w="full"
-          h="full"
-          src={"/images/pj1.jpg"}
-          objectFit={"cover"}
-        />
+        <AnimateInView
+          hidden={{ y: "50px", opacity: 0.5 }}
+          visible={{
+            y: 0,
+            opacity: 1,
+          }}
+          duration={2}
+        >
+          <Image
+            alt={"feature image"}
+            w="full"
+            h="full"
+            src={"/images/pj1.jpg"}
+            objectFit={"cover"}
+          />
+        </AnimateInView>
       </SimpleGrid>
     </WrapContent>
   );

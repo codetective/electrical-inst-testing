@@ -12,6 +12,7 @@ import WrapContent from "../../layout/WrapContent";
 import SmallHorizontalBar from "../../components/SmallHorizontalBar";
 import SectionHeading from "../../components/SectionHeading";
 import { FiArrowUpRight } from "react-icons/fi";
+import AnimateInView from "../../components/motion/AnimateInView";
 
 const projects = [
   {
@@ -33,6 +34,15 @@ const projects = [
     image: "/images/pj/shutdown.jpg",
   },
 ];
+const animProps = {
+  width: "100%",
+  hidden: { y: "50px", opacity: 0.5 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+  duration: 2,
+};
 
 function Projects() {
   return (
@@ -64,12 +74,20 @@ function Projects() {
                 WHY US?
               </Text>
             </Link>
-            <Pcard c={projects[2].caption} i={projects[2].image} />
-            <Pcard c={projects[1].caption} i={projects[1].image} />
+            <AnimateInView {...animProps}>
+              <Pcard c={projects[2].caption} i={projects[2].image} />
+            </AnimateInView>
+            <AnimateInView {...animProps}>
+              <Pcard c={projects[1].caption} i={projects[1].image} />
+            </AnimateInView>
           </Stack>
           <Stack spacing="8">
-            <Pcard c={projects[3].caption} i={projects[3].image} />
-            <Pcard c={projects[0].caption} i={projects[0].image} />
+            <AnimateInView {...animProps}>
+              <Pcard c={projects[3].caption} i={projects[3].image} />
+            </AnimateInView>
+            <AnimateInView {...animProps}>
+              <Pcard c={projects[0].caption} i={projects[0].image} />
+            </AnimateInView>
             <Stack spacing="5" p="5">
               <Text>
                 Customer reliability and consistently high quality services are
