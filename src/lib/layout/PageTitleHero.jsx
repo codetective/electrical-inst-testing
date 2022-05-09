@@ -23,7 +23,7 @@ export default function PageTitleHero({ tagline, title }) {
       <Box>
         <Container maxWidth="container.xl" px={8}>
           <Stack
-            minH={["70vh", "60vh", "70vh"]}
+            minH={["80vh", "80vh", "90vh"]}
             // maxH="700px"
             direction={{ base: "column", md: "row" }}
             pt={["100px", "150px"]}
@@ -47,9 +47,9 @@ export default function PageTitleHero({ tagline, title }) {
                   <Text
                     textShadow="2px 2px 5px black"
                     className="qfont"
-                    fontSize={{ base: "md", lg: "xl" }}
+                    fontSize={{ base: "sm", lg: "lg" }}
                     color={"gray.100"}
-                    fontWeight="bold"
+                    fontFamily="Montserrat"
                   >
                     {tagline}
                   </Text>

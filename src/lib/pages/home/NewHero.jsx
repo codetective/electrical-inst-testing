@@ -58,7 +58,7 @@ function NewHero() {
                 Construction, Project Management and Facility Maintenance.
               </chakra.p>
               <SimpleGrid columns={[1, 2]} spacing={4} w="fit-content" m="auto">
-                <Link href="/about_us">
+                <Link href="/">
                   <a>
                     <Button
                       bg={"brand.300"}

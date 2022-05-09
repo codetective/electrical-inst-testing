@@ -40,7 +40,7 @@ export default function Details() {
               flex={1}
               color={"gray.400"}
               justify={{ lg: "center" }}
-              py={{ base: 4, md: 20, xl: 60 }}
+              py={{ base: 10, md: 20, xl: 20 }}
             >
               <Box mb={{ base: 8, md: 20 }}>
                 {/* <Text

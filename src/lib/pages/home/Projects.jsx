@@ -50,7 +50,7 @@ function Projects() {
                 experienced engineers for our esteemed clients.
               </Text>
             </Stack>
-            <Link href={"/"}>
+            <Link href={"/why_us"}>
               <Text
                 as="a"
                 fontSize="14px"

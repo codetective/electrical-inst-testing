@@ -10,7 +10,7 @@ import CTA from "../../components/CTA";
 const pageDetails = {
   title: "About Us",
   tagline:
-    "We are the leading energy technology company. We design, manufacture and service transformative technologies to help take energy forward.",
+    "We are the leading Nigerian based company offering services in Engineering, Procurement, Construction, Project Management and Facility Maintenance",
 };
 
 export default function About() {

@@ -15,7 +15,7 @@ import SmallTitleWithBar from "../../components/SmallTitleWithBar";
 export default function AboutIntro() {
   return (
     <WrapContent>
-      <Stack spacing="6" w={["full", "full", "75%"]} py="100px">
+      <Stack spacing="6" w={["full", "full", "75%"]} py="80px">
         <SmallTitleWithBar title="ABOUT US" />
         <Heading
           fontSize={["3xl", "3xl", "4xl"]}
@@ -23,11 +23,11 @@ export default function AboutIntro() {
           lineHeight={"1.33"}
           color="brand.500"
         >
-          For more than a century, our inventions have revolutionized energy. We
-          harness the power of engineering, data, and science to redefine what's
-          possible.
+          From our years of service, we have gained outstanding reputation for
+          innovation, reliability, service excellence and a strong maintenance
+          and support culture.
         </Heading>
-        <HStack>
+        {/* <HStack>
           <Link href="#aboutSection">
             <IconButton
               rounded="full"
@@ -42,7 +42,7 @@ export default function AboutIntro() {
           <Text fontSize="sm" fontWeight="bold" color="gray.500">
             EXPLORE
           </Text>
-        </HStack>
+        </HStack> */}
       </Stack>
     </WrapContent>
   );
