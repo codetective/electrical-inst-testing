@@ -23,7 +23,7 @@ export default function PageTitleHero({ tagline, title }) {
       <Box>
         <Container maxWidth="container.xl" px={8}>
           <Stack
-            minH={["80vh", "80vh", "90vh"]}
+            minH={["65vh", "65vh", "70vh"]}
             // maxH="700px"
             direction={{ base: "column", md: "row" }}
             pt={["100px", "150px"]}

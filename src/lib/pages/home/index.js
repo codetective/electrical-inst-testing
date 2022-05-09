@@ -10,14 +10,13 @@ import AboutSection from "./AboutSection";
 import NewHero from "./NewHero";
 import Projects from "./Projects";
 import OurApproach from "./OurApproach";
+import Carousel from "../../components/motion/Carousel";
 
 const Home = () => {
   return (
     <>
       <SEO title={"Welcome"} desc="landing page for site" path="/" />
       <NewHero />
-      {/* <Hero /> */}
-
       <AboutSection />
       <OurServicesAreas />
       <Projects />
@@ -59,20 +58,6 @@ function CTA() {
                 Request a quote to get started!.
               </chakra.span>
             </chakra.h2>
-            {/* <Heading
-              fontSize={["3xl", "3xl", "4xl"]}
-              fontWeight="bold"
-              lineHeight={"1.33"}
-              color="gray.100"
-            >
-              <chakra.span display="block">Want to learn more?</chakra.span>
-            </Heading>
-            <Box w={["100%", "100%", "70%"]} py="3">
-              <Text color="gray.300" as="span" fontSize={"xl"}>
-                We have a team of experts ready to answer your questions and
-                help you get what you need.
-              </Text>
-            </Box> */}
 
             <Stack direction={{ base: "column", sm: "row" }} py="1" spacing={6}>
               <Link href="/">

@@ -59,7 +59,7 @@ export default function Details() {
                   mb={5}
                   fontSize={{ base: "3xl", md: "5xl" }}
                 >
-                  Excellence established in 1984
+                  Excellence established in 2012
                 </Heading>
                 <Text fontSize={"xl"} color={"gray.400"}>
                   Contrary to popular belief, Lorem Ipsum is not simply random

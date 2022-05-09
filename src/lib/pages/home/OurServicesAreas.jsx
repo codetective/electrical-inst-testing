@@ -89,7 +89,7 @@ export default function OurServicesAreas() {
             })}
             {/* end of cards */}
           </SimpleGrid>
-          <Link href="/about_us">
+          <Link href="/services">
             <a
               style={{
                 width: "fit-content",

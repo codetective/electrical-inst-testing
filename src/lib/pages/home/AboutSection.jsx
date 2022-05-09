@@ -16,7 +16,7 @@ export default function AboutSection() {
             <SectionHeading text="Who we are" />
           </Box>
           <Text fontWeight="semibold">
-            Established in 2002, AVETRIX is duly incorporated in Nigeria as an
+            Established in 2012, AVETRIX is duly incorporated in Nigeria as an
             integrated Engineering firm offering strategic Engineering Services
             to the Oil & Gas sector, Manufacturing, Construction, Maritime,
             Industries and Government establishments.

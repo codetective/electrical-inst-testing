@@ -105,7 +105,14 @@ const Header = () => {
             w="full"
             py="3"
           >
-            <Logo h="50px" />
+            <Box
+              display={["block", "block", "block", !navbar ? "none" : "block"]}
+            >
+              <Logo h="50px" state={{ base: false, lg: navbar }} />
+            </Box>
+            <Box display={["none", "none", "none", !navbar ? "block" : "none"]}>
+              <Logo h="50px" state={false} />
+            </Box>
 
             <Box marginLeft="auto" display={["none", "none", "block", "block"]}>
               <HStack spacing="5">

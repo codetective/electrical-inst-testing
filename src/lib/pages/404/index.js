@@ -10,14 +10,14 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-import MotionBox from "../../components/motion/Box";
+import { motion } from "framer-motion";
 
 const Page404 = () => {
   const { colorMode } = useColorMode();
 
   return (
     <Flex minHeight="70vh" direction="column" justifyContent="center">
-      <MotionBox
+      <motion.div
         animate={{ y: 20 }}
         transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
         width={["100%", "70%", "60%", "60%"]}
@@ -27,7 +27,7 @@ const Page404 = () => {
           src="/404 Error-pana.svg"
           alt="Error 404 not found Illustration"
         />
-      </MotionBox>
+      </motion.div>
       <Text textAlign="center" fontSize="xs">
         <ChakraLink
           href="https://stories.freepik.com/web"

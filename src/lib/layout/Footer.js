@@ -64,10 +64,13 @@ export default function LargeWithLogoCentered() {
           <Stack spacing={3}>
             <Box>
               <Logo />
+              <Text as="i" fontSize={"xs"}>
+                ...your reliable partner in electrical instrumentation, control
+                and automation
+              </Text>
             </Box>
-            <Text fontSize={"sm"}>...company catchphrase here</Text>
             <Stack>
-              <Text>{data.name}</Text>
+              <Text as="b">{data.name}</Text>
               <Text> {data.location}</Text>
               <Text>Nigeria</Text>
             </Stack>
@@ -77,6 +80,7 @@ export default function LargeWithLogoCentered() {
             <Link href={"/"}>Home</Link>
             <Link href={"/about_us"}>About Us</Link>
             <Link href={"/projects"}>Project Portfolio</Link>
+            <Link href={"/services"}>What We Do</Link>
             <Link href={"/why_us"}>Why Us</Link>
             <Link href={"/contact"}>Contact Us</Link>
           </Stack>

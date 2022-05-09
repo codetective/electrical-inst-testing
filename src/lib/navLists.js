@@ -10,6 +10,11 @@ let navLists = {
       path: "/about_us",
       button: false,
     },
+    {
+      name: "what we do",
+      path: "/services",
+      button: false,
+    },
 
     {
       name: "why us",
