@@ -130,8 +130,6 @@ function Projects() {
 export default Projects;
 
 function Pcard(props) {
-  console.log(props);
-
   return (
     <Box pos="relative" rounded="lg" h={["320px", "350px", "380px", "350px"]}>
       <Image src={props.i} objectFit={"cover"} h="100%" rounded="lg" w="full" />

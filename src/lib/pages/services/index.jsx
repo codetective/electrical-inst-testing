@@ -6,7 +6,7 @@ import SEO from "../../components/SEO";
 import PageTitleHero from "../../layout/PageTitleHero";
 import WrapContent from "../../layout/WrapContent";
 
-const services = [
+export const services = [
   {
     title: "Supply, Installation and Maintenace",
     img: "/images/install.jpg",
