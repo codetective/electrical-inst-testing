@@ -6,29 +6,31 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 
 export default function ServiceFeaturesBox() {
   return (
-    <SimpleGrid columns={[1, 1, 2]}>
-      <InfoCard
-        title={"expert personnel"}
-        desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
-        icon={GrUserExpert}
-      />
+    <Stack>
+      <SimpleGrid columns={[1, 1, 2]}>
+        <InfoCard
+          title={"expert personnel"}
+          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          icon={GrUserExpert}
+        />
 
-      <InfoCard
-        title={"Delivery on time"}
-        desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
-        icon={AiOutlineFieldTime}
-      />
-      <InfoCard
-        title={"quality products"}
-        desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
-        icon={HiBadgeCheck}
-      />
-      <InfoCard
-        title={"#1 consultancy team"}
-        desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
-        icon={HiOutlineThumbUp}
-      />
-    </SimpleGrid>
+        <InfoCard
+          title={"Delivery on time"}
+          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          icon={AiOutlineFieldTime}
+        />
+        <InfoCard
+          title={"quality products"}
+          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          icon={HiBadgeCheck}
+        />
+        <InfoCard
+          title={"#1 consultancy team"}
+          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          icon={HiOutlineThumbUp}
+        />
+      </SimpleGrid>
+    </Stack>
   );
 }
 

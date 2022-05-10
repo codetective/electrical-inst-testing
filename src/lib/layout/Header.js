@@ -19,8 +19,10 @@ import { BsTelephone } from "react-icons/bs";
 import navLists from "../../lib/navLists";
 import NavDrawer from "./NavDrawer";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargerThan914] = useMediaQuery("(min-width: 990.5px)");
@@ -111,7 +113,11 @@ const Header = () => {
               <Logo h="50px" state={{ base: false, lg: navbar }} />
             </Box>
             <Box display={["none", "none", "none", !navbar ? "block" : "none"]}>
-              <Logo h="50px" state={false} />
+              {router.pathname == "/" ? (
+                <Logo h="50px" state={false} />
+              ) : (
+                <Logo h="50px" state={true} />
+              )}
             </Box>
 
             <Box marginLeft="auto" display={["none", "none", "block", "block"]}>

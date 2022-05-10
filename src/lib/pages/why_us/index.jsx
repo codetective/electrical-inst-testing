@@ -37,7 +37,7 @@ function index() {
         title={"Why you should work with us"}
         tagline="We have years on umparalled experience in all aspects of our services, confirmed delivery and excellent customer relations."
       />
-      <WrapContent>
+      {/* <WrapContent>
         <Box py="60px">
           <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
             <Center>
@@ -67,7 +67,7 @@ function index() {
             </SimpleGrid>
           </Container>
         </Box>
-      </WrapContent>
+      </WrapContent> */}
       <Wfl />
       <CTA
         title="Ready to get started?"
@@ -103,7 +103,7 @@ function Wfl() {
     );
   };
   return (
-    <Box shadow="xl" bg="gray.100" py="60px">
+    <Box py="80px">
       <WrapContent>
         <Flex w="auto" justifyContent="center" alignItems="center">
           <Box mx="auto">
@@ -122,7 +122,7 @@ function Wfl() {
                   lineHeight="shorter"
                   letterSpacing="tight"
                 >
-                  All-in-one platform
+                  We make your life easier!
                 </chakra.h2>
                 <chakra.p
                   mb={6}

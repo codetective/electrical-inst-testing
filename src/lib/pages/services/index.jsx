@@ -5,6 +5,7 @@ import SectionHeading from "../../components/SectionHeading";
 import SEO from "../../components/SEO";
 import PageTitleHero from "../../layout/PageTitleHero";
 import WrapContent from "../../layout/WrapContent";
+import CTA from "../../components/CTA";
 
 export const services = [
   {
@@ -89,6 +90,7 @@ function index() {
           </Stack>
         </WrapContent>
       </Box>
+      <CTA />
     </>
   );
 }
