@@ -21,7 +21,7 @@ export default function About() {
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <AboutIntro />
       <Details />
-      <Leadership />
+      {/* <Leadership /> */}
       <CTA />
     </>
   );

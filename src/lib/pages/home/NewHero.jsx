@@ -60,7 +60,7 @@ function NewHero() {
       bgColor="whiteAlpha.800"
       bgBlendMode={"overlay"}
     >
-      <SimpleGrid columns={[1, 1, 1, 2]} minH="100vh">
+      <SimpleGrid columns={[1, 1, 1, 2]}>
         <WrapContent>
           <Flex
             direction="column"
