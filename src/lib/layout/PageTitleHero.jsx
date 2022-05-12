@@ -65,10 +65,16 @@ export default function PageTitleHero({ tagline, title }) {
           </Container>
         </Box>
       </Box>
-      <Box py="8" bg="yellow.400" pos="relative" top={["0", "0", "0", "-46px"]}>
+      <Box
+        py="5"
+        bg="brand.500"
+        color="gray.100"
+        pos="relative"
+        top={["0", "0", "0", "-46px"]}
+      >
         <WrapContent>
           <VStack>
-            <Text textAlign={"center"} fontSize={["lg", "xl", "2xl", "3xl"]}>
+            <Text textAlign={"center"} fontSize={["md", "lg", "xl", "xl"]}>
               Get a FREE consultation from our experts now!
             </Text>
             <Link href="/consult" passHref>
