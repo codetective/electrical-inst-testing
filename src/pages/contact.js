@@ -4,6 +4,8 @@ import {
   Box,
   Container,
   Heading,
+  VStack,
+  FormLabel,
   Text,
   Stack,
   FormControl,
@@ -16,8 +18,8 @@ import {
   SimpleGrid,
   SlideFade,
 } from "@chakra-ui/react";
-import { MdContacts, MdSubject } from "react-icons/md";
-import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { BsPerson } from "react-icons/bs";
+import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import PageTitleHero from "../lib/layout/PageTitleHero";
 import SmallTitleWithBar from "../lib/components/SmallTitleWithBar";
 import SectionHeading from "../lib/components/SectionHeading";
@@ -36,7 +38,7 @@ export default function Contact() {
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <SlideFade in offsetY="40px">
         <Box position="relative" width="100%" pt="40px" pb="80px">
-          <Container maxW="container.xl" px={8}>
+          <Container maxW="container.xl" px={5}>
             <SimpleGrid columns={[1, 1, 2, 2]} spacing="20px">
               <Stack>
                 <Stack alignItems={{ base: "center", md: "baseline" }}>
@@ -80,7 +82,6 @@ export default function Contact() {
               <Stack
                 bg={"white"}
                 rounded={"xl"}
-                p={{ base: 4, sm: 6, md: 8 }}
                 spacing={{ base: 8 }}
                 justify="center"
                 maxW="600px"
@@ -98,123 +99,86 @@ export default function Contact() {
                   </Text>
                 </Stack>
                 <Box
-                  as={"form"}
-                  mt={10}
-                  // onSubmit={sendComplaints}
+                  p="5"
+                  bg="white"
+                  borderRadius="lg"
+                  color="gray.700"
+                  shadow="base"
                 >
-                  <Stack spacing={5}>
-                    {/* name */}
-                    <FormControl>
+                  <VStack spacing={5}>
+                    <FormControl isRequired>
+                      <FormLabel>Name</FormLabel>
+
                       <InputGroup>
-                        <InputLeftElement
-                          pl="2"
-                          py="6"
-                          pointerEvents="none"
-                          children={
-                            <Icon
-                              as={MdContacts}
-                              fontSize="24px"
-                              color="brand.300"
-                            />
-                          }
-                        />
+                        <InputLeftElement children={<BsPerson />} />
                         <Input
                           type="text"
                           name="name"
-                          placeholder="Your full name"
-                          py="6"
-                          className="afont"
-                          required
-                          pl="45px"
-                          rounded="full"
-                          bg="gray.100"
+                          placeholder="Your Full Name"
                         />
                       </InputGroup>
                     </FormControl>
 
-                    {/* subject */}
-                    <FormControl>
+                    <FormControl isRequired>
+                      <FormLabel>Email</FormLabel>
+
                       <InputGroup>
-                        <InputLeftElement
-                          pl="2"
-                          py="6"
-                          pointerEvents="none"
-                          children={
-                            <Icon
-                              as={MdSubject}
-                              fontSize="24px"
-                              color="brand.300"
-                            />
-                          }
+                        <InputLeftElement children={<MdOutlineEmail />} />
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Your Email"
                         />
+                      </InputGroup>
+                    </FormControl>
+                    <FormControl isRequired>
+                      <FormLabel>Subject</FormLabel>
+
+                      <InputGroup>
+                        <InputLeftElement children={<MdOutlineEmail />} />
                         <Input
                           type="text"
                           name="subject"
-                          required
-                          placeholder="Topic of message eg, Inquiry"
-                          py="6"
-                          className="afont"
-                          pl="45px"
-                          rounded="full"
-                          bg="gray.100"
+                          placeholder="Why you are contacting us"
                         />
                       </InputGroup>
                     </FormControl>
-                    {/* email */}
-                    <FormControl>
+                    {/* <FormControl isRequired>
+                      <FormLabel>Phone Number</FormLabel>
+
                       <InputGroup>
-                        <InputLeftElement
-                          pl="2"
-                          py="6"
-                          pointerEvents="none"
-                          children={
-                            <Icon
-                              as={FaEnvelope}
-                              fontSize="24px"
-                              color="brand.300"
-                            />
-                          }
-                        />
+                        <InputLeftElement children={<MdOutlinePhone />} />
                         <Input
-                          type="email"
-                          placeholder="Your email"
-                          py="6"
-                          pl="45px"
-                          name="email"
-                          className="afont"
-                          rounded="full"
-                          required
-                          bg="gray.100"
+                          type="number"
+                          name="number"
+                          placeholder="Your Phone Number"
                         />
                       </InputGroup>
+                    </FormControl> */}
+
+                    <FormControl isRequired>
+                      <FormLabel>Message</FormLabel>
+
+                      <Textarea
+                        name="message"
+                        placeholder="Your Message, please be concise"
+                        rows={6}
+                        resize="none"
+                      />
                     </FormControl>
-                    {/* message box */}
-                    <Textarea
-                      name="message"
-                      className="afont"
-                      required
-                      minH="140px"
-                      bg="gray.100"
-                      placeholder="Write your message. Please be concise and include as muchh information as necessary: don't include any private information"
-                    />
+
                     <Button
-                      size="lg"
-                      rounded="34px"
-                      type="submit"
+                      colorScheme="blue"
+                      bg="blue.400"
                       color="white"
-                      // disabled={sending}
-                      // isLoading={sending}
-                      bg="brand.400"
                       _hover={{
-                        bg: "brand.300",
+                        bg: "blue.500",
                       }}
-                      px={"40px"}
-                      className="afont"
-                      w="full"
+                      isFullWidth
                     >
-                      Submit response
+                      Send Message
                     </Button>
-                  </Stack>
+                  </VStack>
                 </Box>
               </Stack>
             </SimpleGrid>

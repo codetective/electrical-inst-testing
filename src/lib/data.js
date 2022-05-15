@@ -1,7 +1,7 @@
 const data = {
   email: "info@avetrix.com",
-  phone: " (+234)-8155-0950-96",
-  phone2: "(+234)-8064-0529-41",
+  phone: "+2348155095096",
+  phone2: "+2348064052941",
   location: "Port Harcourt, Nigeria",
   name: "Avetrix Controls Limited",
 };

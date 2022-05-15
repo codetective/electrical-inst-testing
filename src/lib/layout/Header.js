@@ -20,6 +20,7 @@ import navLists from "../../lib/navLists";
 import NavDrawer from "./NavDrawer";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import data from "../data";
 
 const Header = () => {
   const router = useRouter();
@@ -45,7 +46,16 @@ const Header = () => {
     <Box position={"sticky"} top={[0, 0, "-50"]} zIndex={"11"}>
       {!isLargerThan914 && <NavDrawer isOpen={isOpen} onClose={onClose} />}
       <Box
-        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.01)" : "black"]}
+        bg={[
+          "black",
+          "black",
+          "black",
+          router.pathname != "/getquote" && !navbar
+            ? "rgba(0,0,0,0.0)"
+            : router.pathname === "/getquote"
+            ? "black"
+            : "black",
+        ]}
         transition="all .5s ease"
         display={["none", "none", "block", "block"]}
       >
@@ -63,21 +73,19 @@ const Header = () => {
               <HStack justifyContent={"space-between"} spacing="5">
                 <HeaderInfoText
                   icon={BsTelephone}
-                  href="tel:+2349023510969"
-                  text="+234 817 755 2052"
+                  href={"tel:+" + data.phone}
+                  text={data.phone}
                 />
                 <HeaderInfoText
                   icon={HiOutlineMail}
-                  href="mailto:mailaddress"
-                  text="info@mail.domain"
+                  href={"mailto: " + data.email}
+                  text={data.email}
                 />
               </HStack>
               <HeaderInfoText
                 icon={GoLocation}
                 href="maps.google.com"
-                text="1738 Address Road
-
-                City, State"
+                text={data.location}
               />
             </HStack>
           </Flex>
@@ -88,7 +96,17 @@ const Header = () => {
         display={"block"}
         position="absolute"
         left="0"
-        bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.0)" : "black"]}
+        // bg={["black", "black", "black", !navbar ? "rgba(0,0,0,0.0)" : "black"]}
+        bg={[
+          "black",
+          "black",
+          "black",
+          router.pathname != "/getquote" && !navbar
+            ? "rgba(0,0,0,0.0)"
+            : router.pathname === "/getquote"
+            ? "black"
+            : "black",
+        ]}
         zIndex={"10"}
         color={[
           "gray.200",

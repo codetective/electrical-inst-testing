@@ -9,12 +9,22 @@ import {
   Center,
   VStack,
 } from "@chakra-ui/react";
+import { useContextualRouting } from "next-use-contextual-routing";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import ConsultModal from "../components/ConsultModal";
 import WrapContent from "./WrapContent";
 
 export default function PageTitleHero({ tagline, title }) {
+  const { makeContextualHref, returnHref } = useContextualRouting();
+  const router = useRouter();
   return (
     <>
+      <ConsultModal
+        pageState={router.query.id}
+        close={() => router.push(returnHref)}
+      />
+
       <Box
         pos="relative"
         bgImage="url('/images/img1.jpg')"
@@ -57,6 +67,7 @@ export default function PageTitleHero({ tagline, title }) {
                       fontFamily="Montserrat"
                     >
                       {tagline}
+                      {/* router.query.id */}
                     </Text>
                   </Box>
                 </Stack>
@@ -77,7 +88,7 @@ export default function PageTitleHero({ tagline, title }) {
             <Text textAlign={"center"} fontSize={["md", "lg", "xl", "xl"]}>
               Get a FREE consultation from our experts now!
             </Text>
-            <Link href="/consult" passHref>
+            <Link href={makeContextualHref({ id: true })} as="/consult" shallow>
               <a>
                 <Text textDecoration={"underline"} textUnderlineOffset="5px">
                   Get started!

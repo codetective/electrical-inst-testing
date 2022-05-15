@@ -66,7 +66,7 @@ function NewHero() {
             direction="column"
             alignItems="center"
             justifyContent="center"
-            px={{ base: 4, md: 10, lg: 10 }}
+            px={{ base: 4, md: 10, lg: 5 }}
             pt={["200px", "200px", "220px", "150px"]}
             pb={"40px"}
             minH="100vh"
@@ -95,8 +95,13 @@ function NewHero() {
                 We have extensive experience in Engineering, Procurement,
                 Construction, Project Management and Facility Maintenance.
               </chakra.p>
-              <SimpleGrid columns={[1, 2]} spacing={4} w="fit-content" m="auto">
-                <Link href="/">
+              <SimpleGrid
+                columns={[1, 2]}
+                spacing={4}
+                w="fit-content"
+                m={{ base: "auto", lg: "initial" }}
+              >
+                <Link href="/getquote">
                   <a>
                     <Button
                       bg={"brand.300"}
