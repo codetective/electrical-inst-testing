@@ -116,7 +116,7 @@ const Header = () => {
         ]}
         w="full"
         transition="all .5s ease"
-        textShadow="2px 2px 5px black"
+        textShadow="1px 1px black"
       >
         <WrapContent>
           <Stack
@@ -182,11 +182,12 @@ function HeaderInfoText({ icon, text, href }) {
       <Text
         as="a"
         _hover={{
-          color: "blue.500",
+          color: "brand.300",
         }}
         fontSize="14px"
         fontWeight="light"
-        color={["gray.200", "brand.400"]}
+        color={["gray.200", "white"]}
+        textShadow="1px 1px black"
         fontFamily={"Poppins"}
         cursor="pointer"
       >

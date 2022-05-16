@@ -28,7 +28,7 @@ export default function Hero() {
                   <Text
                     as={"span"}
                     color="gray.100"
-                    textShadow="2px 2px 5px black"
+                    textShadow="1px 1px black"
                     fontSize={["2rem", "3rem", "4rem", "5rem"]}
                     position={"relative"}
                   >
@@ -38,7 +38,7 @@ export default function Hero() {
                   <Text
                     as={"span"}
                     color="gray.100"
-                    textShadow="2px 2px 5px black"
+                    textShadow="1px 1px black"
                     fontSize={["2rem", "3rem", "4rem", "5rem"]}
                     position={"relative"}
                   >
@@ -47,7 +47,7 @@ export default function Hero() {
                 </Heading>
                 <Box>
                   <Text
-                    textShadow="2px 2px 5px black"
+                    textShadow="1px 1px black"
                     className="qfont"
                     fontSize={{ base: "lg", lg: "xl" }}
                     color={"gray.100"}

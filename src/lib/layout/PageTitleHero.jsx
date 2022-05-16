@@ -31,14 +31,14 @@ export default function PageTitleHero({ tagline, title }) {
         bgRepeat={"no-repeat"}
         bgSize="cover"
         bgPos={"center"}
-        bgColor="gray.700"
+        bgColor="gray.800"
         bgBlendMode={"overlay"}
         top={["0", "0", "0", "-46px"]}
       >
         <Box>
           <Container maxWidth="container.xl" px={[5, 5, 8]}>
             <Stack
-              minH={["50vh", "50vh", "50vh"]}
+              minH={["60vh", "60vh", "60vh"]}
               // maxH="700px"
               direction={{ base: "column", md: "row" }}
               pt={["100px", "150px"]}
@@ -50,7 +50,7 @@ export default function PageTitleHero({ tagline, title }) {
                     <Text
                       as={"span"}
                       color="gray.100"
-                      textShadow="2px 2px 5px black"
+                      textShadow="1px 1px black"
                       fontSize={["2rem", "3rem", "3.5rem", "4rem"]}
                       position={"relative"}
                     >
@@ -60,7 +60,7 @@ export default function PageTitleHero({ tagline, title }) {
                   </Heading>
                   <Box>
                     <Text
-                      textShadow="2px 2px 5px black"
+                      textShadow="1px 1px black"
                       className="qfont"
                       fontSize={{ base: "sm", lg: "lg" }}
                       color={"gray.100"}
