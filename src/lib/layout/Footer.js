@@ -18,6 +18,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import data from "../data";
+import { services } from "../pages/services";
 import Logo from "./Logo";
 
 const SocialButton = ({ children, label, href }) => {
@@ -83,11 +84,9 @@ export default function LargeWithLogoCentered() {
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader>Our Services</ListHeader>
-              <Link href={"#"}>Cookies Policy</Link>
-              <Link href={"#"}>Privacy Policy</Link>
-              <Link href={"#"}>Terms of Service</Link>
-              <Link href={"#"}>Law Enforcement</Link>
-              <Link href={"#"}>Status</Link>
+              {services.map((s, i) => (
+                <Link href={s.path}>{s.title}</Link>
+              ))}
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader>Get in touch!</ListHeader>

@@ -33,7 +33,7 @@ export default function CTA() {
             </chakra.h2>
 
             <Stack direction={{ base: "column", sm: "row" }} py="1" spacing={6}>
-              <Link href="/">
+              <Link href="/getquote">
                 <Button
                   maxW="fit-content"
                   color="gray.100"

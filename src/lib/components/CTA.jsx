@@ -46,7 +46,7 @@ function CTA({ title, tagline }) {
             </Box>
 
             <Stack direction={{ base: "column", sm: "row" }} py="2" spacing={6}>
-              <Link href="/">
+              <Link href="/contact">
                 <Button
                   maxW="fit-content"
                   color="gray.100"
@@ -60,7 +60,7 @@ function CTA({ title, tagline }) {
                   learn more
                 </Button>
               </Link>
-              <Link href="/">
+              <Link href="/getquote">
                 <Button
                   maxW="fit-content"
                   color="gray.100"

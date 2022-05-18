@@ -1,7 +1,8 @@
-import { Box } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import SEO from "../../components/SEO";
 import PageTitleHero from "../../layout/PageTitleHero";
+import WrapContent from "../../layout/WrapContent";
 import ProjectDetails from "./ProjectDetails";
 
 const projects = [
@@ -45,19 +46,21 @@ function index() {
         }
         title="Our Projects"
       />
-      <Box py="80px">
-        {projects.map((p, index) => (
-          <ProjectDetails
-            key={index}
-            title={p.title}
-            desc={p.desc}
-            tag={p.tag}
-            location={p.location}
-            image={p.image}
-            idx={index}
-          />
-        ))}
-      </Box>
+      <WrapContent>
+        <SimpleGrid spacing="10" columns={[1, 1, 2]} py="40px">
+          {projects.map((p, index) => (
+            <ProjectDetails
+              key={index}
+              title={p.title}
+              desc={p.desc}
+              tag={p.tag}
+              location={p.location}
+              image={p.image}
+              idx={index}
+            />
+          ))}
+        </SimpleGrid>
+      </WrapContent>
     </>
   );
 }
