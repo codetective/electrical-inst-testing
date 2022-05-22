@@ -14,17 +14,65 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  SimpleGrid,
   Stack,
   Textarea,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
-import SectionHeading from "./SectionHeading";
 import { BsPerson } from "react-icons/bs";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import WrapContent from "../layout/WrapContent";
+import { useState } from "react";
+import axios from "axios";
+const headers = { "Content-Type": "application/json" };
 
 export default function ConsultModal({ pageState, size = "md", close }) {
+  const toast = useToast();
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const { name, email, phone, message } = e.target;
+    const data = {
+      email: email.value,
+      name: name.value,
+      phone: phone.value,
+      message: message.value,
+    };
+    axios
+      .post("http://localhost:8000/api/consult.php", data, { headers: headers })
+      .then(function (response) {
+        if (response.data.token) {
+          toast({
+            status: "success",
+            description: response.data.success || "Request successful",
+            position: "bottom-right",
+            isClosable: true,
+          });
+          console.log(response);
+          e.target.reset();
+        } else {
+          throw new Error(response.data);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        toast({
+          status: "error",
+          title: "Request failed",
+          description: error.response.data
+            ? error.response.data.error
+            : error.response.data
+            ? error.response.data
+            : error.message,
+          position: "bottom-right",
+          isClosable: true,
+        });
+      });
+    setLoading(false);
+  };
   return (
     <>
       <Drawer size={size} isOpen={pageState} placement="right" onClose={close}>
@@ -39,7 +87,12 @@ export default function ConsultModal({ pageState, size = "md", close }) {
             <WrapContent px={[0, 0, 0, 8]}>
               <Stack bg="gray.50" spacing="5">
                 <Box bg="white" borderRadius="lg" color="gray.700">
-                  <VStack spacing={5}>
+                  <VStack
+                    spacing={5}
+                    as="form"
+                    onSubmit={handleSubmit}
+                    id="consult"
+                  >
                     <FormControl isRequired>
                       <FormLabel>Name</FormLabel>
 
@@ -72,7 +125,7 @@ export default function ConsultModal({ pageState, size = "md", close }) {
                         <InputLeftElement children={<MdOutlinePhone />} />
                         <Input
                           type="number"
-                          name="number"
+                          name="phone"
                           placeholder="Your Phone Number"
                         />
                       </InputGroup>
@@ -98,22 +151,22 @@ export default function ConsultModal({ pageState, size = "md", close }) {
             <DrawerFooter>
               <Button
                 variant="outline"
-                color="white"
+                colorScheme={"red"}
                 mr={3}
                 onClick={close}
-                _hover={{
-                  bg: "brand.500",
-                }}
               >
                 Cancel
               </Button>
               <Button
                 colorScheme="blue"
-                bg="blue.400"
+                bg="brand.400"
                 color="white"
                 _hover={{
                   bg: "brand.300",
                 }}
+                type="submit"
+                form="consult"
+                isLoading={loading}
               >
                 Send Message
               </Button>

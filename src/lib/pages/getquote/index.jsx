@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import WrapContent from "../../layout/WrapContent";
 import SectionHeading from "../../components/SectionHeading";
 import {
@@ -13,19 +13,68 @@ import {
   Stack,
   Text,
   Textarea,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import SEO from "../../components/SEO";
 import data from "../../data";
 import { BsPerson } from "react-icons/bs";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
+import axios from "axios";
+const headers = { "Content-Type": "application/json" };
 
 function Getquote() {
+  const toast = useToast();
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = (e) => {
+    setSubmitting(true);
+    e.preventDefault();
+    const { name, email, phone, message } = e.target;
+    const data = {
+      email: email.value,
+      name: name.value,
+      phone: phone.value,
+      message: message.value,
+    };
+    axios
+      .post("http://localhost:8000/api/quote.php", data, { headers: headers })
+      .then(function (response) {
+        if (response.data.token) {
+          toast({
+            status: "success",
+            description: response.data.success || "Request successful",
+            position: "bottom-right",
+            isClosable: true,
+          });
+          console.log(response);
+          e.target.reset();
+          setSubmitting(false);
+        } else {
+          setSubmitting(false);
+          throw new Error(response.data);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        setSubmitting(false);
+
+        toast({
+          status: "error",
+          title: "Request failed",
+          description: error.response
+            ? error.response.data.error
+            : error.message,
+          position: "bottom-right",
+          isClosable: true,
+        });
+      });
+  };
   return (
     <>
       <SEO
         title={"Request a quote"}
-        desc="about page for site"
+        desc="Get a quote for your project, send us a message now and we will respond soon"
         path="/getquote"
       />
       <Box pt={["120px", "150px", "150px", "150px"]} pb="80px">
@@ -38,19 +87,19 @@ function Getquote() {
                 our clients. If you are looking for assistance with an upcoming
                 electrical engineering project, we would be happy to discuss
                 your specific needs and requirements.
-                <Text>
-                  Please fill out the form below, and we will respectfully
-                  respond to you within 24 hours. If you require immediate
-                  assistance, please feel free to connect with us over phone.
-                  You can reach us by dialing{" "}
-                  <b>
-                    <a href={"tel:" + data.phone}>{data.phone}</a>
-                  </b>{" "}
-                  or{" "}
-                  <b>
-                    <a href={"tel:" + data.phone2}>{data.phone2}</a>
-                  </b>
-                </Text>
+              </Text>
+              <Text>
+                Please fill out the form below, and we will respectfully respond
+                to you within 24 hours. If you require immediate assistance,
+                please feel free to connect with us over phone. You can reach us
+                by dialing{" "}
+                <b>
+                  <a href={"tel:" + data.phone}>{data.phone}</a>
+                </b>{" "}
+                or{" "}
+                <b>
+                  <a href={"tel:" + data.phone2}>{data.phone2}</a>
+                </b>
               </Text>
             </Stack>
             <Stack bg="gray.50" spacing="5">
@@ -61,7 +110,7 @@ function Getquote() {
                 color="gray.700"
                 shadow="base"
               >
-                <VStack spacing={5}>
+                <VStack spacing={5} as="form" onSubmit={handleSubmit}>
                   <FormControl isRequired>
                     <FormLabel>Name</FormLabel>
 
@@ -94,7 +143,7 @@ function Getquote() {
                       <InputLeftElement children={<MdOutlinePhone />} />
                       <Input
                         type="number"
-                        name="number"
+                        name="phone"
                         placeholder="Your Phone Number"
                       />
                     </InputGroup>
@@ -113,12 +162,16 @@ function Getquote() {
 
                   <Button
                     colorScheme="blue"
-                    bg="blue.400"
                     color="white"
+                    bg="brand.400"
                     _hover={{
-                      bg: "blue.500",
+                      bg: "brand.300",
                     }}
                     isFullWidth
+                    isLoading={submitting}
+                    disabled={submitting}
+                    loadingText="submitting"
+                    type="submit"
                   >
                     Send Message
                   </Button>

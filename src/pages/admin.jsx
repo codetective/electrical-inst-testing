@@ -1,45 +1,54 @@
-import WrapContent from "../lib/layout/WrapContent";
 import React from "react";
 import { Center } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Login from "../lib/pages/admin/login";
 import jwt_decode from "jwt-decode";
+import Home from "../lib/pages/admin/home";
 
 export default function admin() {
-  const [ready, setReadyState] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [jwt, setjwt] = useState(null);
   const [auth, setAuth] = useState(null);
+  const [jwt, setJwt] = useState(null);
 
-  const handleJWT = (token) => {
-    let decoded = jwt_decode(token);
-    console.log(decoded);
+  const handleSetAuth = (data) => {
+    setAuth((prev) => data);
+  };
+
+  const handleAuth = (token, fromLogin = true) => {
+    try {
+      let decoded = jwt_decode(token);
+      if (fromLogin) {
+        localStorage.setItem("alvesharp", token);
+        setJwt(token);
+        handleSetAuth(decoded.data);
+      } else {
+        if (Date.now() >= decoded.exp * 1000) {
+          alert("Login expired, please login again");
+        } else {
+          handleSetAuth(decoded.data);
+        }
+      }
+    } catch (error) {
+      alert("An error occurred!: " + error.message);
+    }
+    setLoading(false);
   };
 
   useEffect(() => {
     if (window) {
-      setReadyState(true);
-
-      const lst = JSON.parse(localStorage.getItem("alvesharp"));
+      const lst = localStorage.getItem("alvesharp");
+      setJwt(lst);
       if (lst) {
-        handleJWT(lst);
-      } else {
-        setAuth(false);
+        handleAuth(lst, false);
       }
       setLoading(false);
     }
   }, []);
   return (
     <>
-      {ready && loading && <Center h="100vh">Loading...</Center>}
-
-      {ready && !loading && <Login setAuth={setAuth} />}
-
-      {auth && !loading && (
-        <Box>
-          <WrapContent>logged in</WrapContent>
-        </Box>
-      )}
+      {loading && <Center h="100vh">Loading...</Center>}
+      {!loading && !auth && <Login handleAuth={handleAuth} />}
+      {auth && <Home auth={auth} jwt={jwt} />}
     </>
   );
 }

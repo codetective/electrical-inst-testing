@@ -3,7 +3,7 @@ import {
   Flex,
   Text,
   HStack,
-  IconButton,
+  Button,
   useDisclosure,
   useMediaQuery,
   Icon,
@@ -157,16 +157,19 @@ const Header = () => {
                 ))}
               </HStack>
             </Box>
-            <IconButton
-              onClick={onOpen}
-              display={["initial", "initial", "none", "none"]}
-              as={BiMenu}
-              borderRadius="sm"
+
+            <Button
+              rounded="sm"
+              fontSize={"35px"}
               color="gray.200"
+              onClick={onOpen}
+              display={["flex", "flex", "none", "none"]}
+              borderRadius="sm"
               variant={"link"}
               cursor="pointer"
-              size="md"
-            />
+            >
+              <BiMenu />
+            </Button>
           </Stack>
         </WrapContent>
       </Box>

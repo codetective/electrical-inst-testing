@@ -1,5 +1,5 @@
 const defaultSEOConfig = {
-  title: "Avetrix Controls Limited",
+  title: "Welcome to Avetrix",
   titleTemplate: "%s | Avetrix Controls Limited",
   defaultTitle: "Avetrix Controls Limited",
   description: "template for site",

@@ -85,7 +85,9 @@ export default function LargeWithLogoCentered() {
             <Stack align={"flex-start"}>
               <ListHeader>Our Services</ListHeader>
               {services.map((s, i) => (
-                <Link href={s.path}>{s.title}</Link>
+                <Link key={i} href={s.path}>
+                  {s.title}
+                </Link>
               ))}
             </Stack>
             <Stack align={"flex-start"}>

@@ -10,10 +10,14 @@ import {
   Stack,
   useColorModeValue,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import axios from "axios";
 
-function Login({ setAuth }) {
+function Login({ handleAuth }) {
+  const toast = useToast();
+  const headers = { "Content-Type": "application/json" };
   const [isLoading, setloading] = useState(false);
 
   const handleLogin = async (e) => {
@@ -24,7 +28,36 @@ function Login({ setAuth }) {
       email: email.value,
       password: password.value,
     };
-    const res = await fetch("localhost/sites/electapi/api/login.php", data);
+    axios
+      .post("http://localhost:8000/api/login.php", data, { headers: headers })
+      .then(function (response) {
+        if (response.data.token) {
+          toast({
+            status: "success",
+            description: response.data.success || "Request successful",
+            position: "bottom-right",
+            isClosable: true,
+          });
+          handleAuth(response.data.token);
+          console.log(response);
+        } else {
+          throw new Error(response.data);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        toast({
+          status: "error",
+          title: "Request failed",
+          description: error.response.data.error
+            ? error.response.data.error
+            : error.response.data
+            ? error.response.data
+            : error.message,
+          position: "bottom-right",
+          isClosable: true,
+        });
+      });
     setloading(false);
   };
   return (
