@@ -18,12 +18,14 @@ import {
   Textarea,
   VStack,
   useToast,
+  FormHelperText,
 } from "@chakra-ui/react";
 import { BsPerson } from "react-icons/bs";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import WrapContent from "../layout/WrapContent";
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 const headers = { "Content-Type": "application/json" };
 
 export default function ConsultModal({ pageState, size = "md", close }) {
@@ -42,7 +44,7 @@ export default function ConsultModal({ pageState, size = "md", close }) {
       message: message.value,
     };
     axios
-      .post("http://localhost:8000/api/consult.php", data, { headers: headers })
+      .post(API_BASE_URL + "/api/consult.php", data, { headers: headers })
       .then(function (response) {
         if (response.data.token) {
           toast({
@@ -53,25 +55,24 @@ export default function ConsultModal({ pageState, size = "md", close }) {
           });
           console.log(response);
           e.target.reset();
+          setLoading(false);
         } else {
+          setLoading(false);
           throw new Error(response.data);
         }
       })
       .catch(function (error) {
         console.log(error);
+        setLoading(false);
+
         toast({
           status: "error",
           title: "Request failed",
-          description: error.response.data
-            ? error.response.data.error
-            : error.response.data
-            ? error.response.data
-            : error.message,
+          description: "Cannot send request, please retry",
           position: "bottom-right",
           isClosable: true,
         });
       });
-    setLoading(false);
   };
   return (
     <>
@@ -148,6 +149,13 @@ export default function ConsultModal({ pageState, size = "md", close }) {
           </DrawerBody>
 
           <WrapContent px={[0, 0, 0, 8]}>
+            {loading && (
+              <FormControl>
+                <FormHelperText textAlign={"right"} px="6">
+                  This may take some time... please wait!
+                </FormHelperText>
+              </FormControl>
+            )}
             <DrawerFooter>
               <Button
                 variant="outline"

@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   FormControl,
+  FormHelperText,
   FormLabel,
   Input,
   InputGroup,
@@ -21,6 +22,7 @@ import data from "../../data";
 import { BsPerson } from "react-icons/bs";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import axios from "axios";
+import { API_BASE_URL } from "../../config";
 const headers = { "Content-Type": "application/json" };
 
 function Getquote() {
@@ -38,7 +40,7 @@ function Getquote() {
       message: message.value,
     };
     axios
-      .post("http://localhost:8000/api/quote.php", data, { headers: headers })
+      .post(API_BASE_URL + "/api/quote.php", data, { headers: headers })
       .then(function (response) {
         if (response.data.token) {
           toast({
@@ -62,9 +64,7 @@ function Getquote() {
         toast({
           status: "error",
           title: "Request failed",
-          description: error.response
-            ? error.response.data.error
-            : error.message,
+          description: "Cannot send request, please retry",
           position: "bottom-right",
           isClosable: true,
         });
@@ -159,6 +159,13 @@ function Getquote() {
                       resize="none"
                     />
                   </FormControl>
+                  {submitting && (
+                    <FormControl>
+                      <FormHelperText>
+                        This may take some time... please wait!
+                      </FormHelperText>
+                    </FormControl>
+                  )}
 
                   <Button
                     colorScheme="blue"

@@ -1,4 +1,5 @@
-const BASE_URL = "siteurl";
+const BASE_URL = "https://www.avetrix.com";
+const API_BASE_URL = "https://api.avetrix.com";
 
 const SEOTAGS = (title, path, desc) => {
   return [
@@ -44,4 +45,4 @@ const SEOTAGS = (title, path, desc) => {
     },
   ];
 };
-export { SEOTAGS, BASE_URL };
+export { SEOTAGS, BASE_URL, API_BASE_URL };
