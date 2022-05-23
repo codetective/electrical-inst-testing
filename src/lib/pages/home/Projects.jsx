@@ -67,20 +67,16 @@ function Projects() {
                 WHY US?
               </Text>
             </Link>
-            <AnimateInView {...animProps}>
-              <Pcard c={projects[2].caption} i={projects[2].image} />
-            </AnimateInView>
-            <AnimateInView {...animProps}>
-              <Pcard c={projects[1].caption} i={projects[1].image} />
-            </AnimateInView>
+
+            <Pcard c={projects[2].caption} i={projects[2].image} />
+
+            <Pcard c={projects[1].caption} i={projects[1].image} />
           </Stack>
           <Stack spacing="8">
-            <AnimateInView {...animProps}>
-              <Pcard c={projects[3].caption} i={projects[3].image} />
-            </AnimateInView>
-            <AnimateInView {...animProps}>
-              <Pcard c={projects[0].caption} i={projects[0].image} />
-            </AnimateInView>
+            <Pcard c={projects[3].caption} i={projects[3].image} />
+
+            <Pcard c={projects[0].caption} i={projects[0].image} />
+
             <Stack spacing="5" p="5">
               <Text>
                 Customer reliability and consistently high quality services are
