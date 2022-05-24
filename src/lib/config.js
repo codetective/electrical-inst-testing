@@ -1,6 +1,8 @@
 const BASE_URL = "http://www.avetrix.com";
 const API_BASE_URL = "http://api.avetrix.com";
 
+// const API_BASE_URL = "http://localhost:8000";
+
 const SEOTAGS = (title, path, desc) => {
   return [
     {

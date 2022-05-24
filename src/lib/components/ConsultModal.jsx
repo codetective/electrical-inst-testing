@@ -46,7 +46,7 @@ export default function ConsultModal({ pageState, size = "md", close }) {
     axios
       .post(API_BASE_URL + "/api/consult.php", data, { headers: headers })
       .then(function (response) {
-        if (response.data.token) {
+        if (response.data.success) {
           toast({
             status: "success",
             description: response.data.success || "Request successful",

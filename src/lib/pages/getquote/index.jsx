@@ -42,7 +42,7 @@ function Getquote() {
     axios
       .post(API_BASE_URL + "/api/quote.php", data, { headers: headers })
       .then(function (response) {
-        if (response.data.token) {
+        if (response.data.success) {
           toast({
             status: "success",
             description: response.data.success || "Request successful",
