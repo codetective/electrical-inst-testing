@@ -15,6 +15,9 @@ import Logo from "./Logo";
 import navLists from "../../lib/navLists";
 
 export default function NavDrawer({ isOpen, onClose }) {
+  const handleClick = (e) => {
+    e.target.tagName === "A" && onClose();
+  };
   return (
     <>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -23,7 +26,7 @@ export default function NavDrawer({ isOpen, onClose }) {
           <DrawerCloseButton />
           <DrawerHeader fontFamily={"Montserrat"}>Menu</DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody onClick={handleClick}>
             <VStack spacing="4">
               {navLists.mainNav.map((item, idx) => (
                 <Link href={item.path} key={idx}>

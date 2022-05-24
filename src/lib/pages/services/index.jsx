@@ -57,7 +57,7 @@ function index() {
             <SimpleGrid py="5" columns={[1, 1, 2]} spacing={[10, 10, 10]}>
               {services.map((s, i) => {
                 return (
-                  <Link href={s.path}>
+                  <Link href={s.path} key={i}>
                     <a className="pjlink">
                       <Stack>
                         <Box h="270px" overflow="hidden">
