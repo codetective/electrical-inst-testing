@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 import DrawerContainer from "./drawer";
 
-function Home({ auth }) {
+function Home({ auth, jwt }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [action, setAction] = useState(null);
   function g() {
@@ -66,7 +66,12 @@ function Home({ auth }) {
         </Center>
       </Stack>
       {isOpen && (
-        <DrawerContainer action={action} isOpen={isOpen} onClose={onClose} />
+        <DrawerContainer
+          jwt={jwt}
+          action={action}
+          isOpen={isOpen}
+          onClose={onClose}
+        />
       )}
     </Box>
   );

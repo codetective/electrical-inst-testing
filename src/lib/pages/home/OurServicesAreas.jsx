@@ -56,6 +56,10 @@ const contentForCards = [
       "Project Management Inspection",
       "Non Destructive Testing (NDT)",
       "Equipment hiring and Rentals",
+      "Electrical System Installation ,",
+      "CCTV & Security System ",
+      "Telecommunication System Installation ",
+      "Solar & Inverter System Installation",
     ],
   },
 ];

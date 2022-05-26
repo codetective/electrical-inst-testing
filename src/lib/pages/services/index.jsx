@@ -86,6 +86,10 @@ function index() {
               <Text>● Project Management Inspection</Text>
               <Text>● Non Destruction testing (NDT)</Text>
               <Text>● Equipment hiring and Rentals</Text>
+              <Text>● Electrical System Installation </Text>
+              <Text>● CCTV & Security System </Text>
+              <Text>● Telecommunication System Installation </Text>
+              <Text>● Solar & Inverter System Installation</Text>
             </Stack>
           </Stack>
         </WrapContent>

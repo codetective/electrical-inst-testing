@@ -20,7 +20,7 @@ function Login({ handleAuth }) {
   const headers = { "Content-Type": "application/json" };
   const [isLoading, setloading] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setloading(true);
     const { password, email } = e.target;
@@ -45,14 +45,12 @@ function Login({ handleAuth }) {
         }
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response);
         toast({
           status: "error",
           title: "Request failed",
-          description: error.response.data.error
+          description: error.response.data
             ? error.response.data.error
-            : error.response.data
-            ? error.response.data
             : error.message,
           position: "bottom-right",
           isClosable: true,
