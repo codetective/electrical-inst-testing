@@ -14,8 +14,11 @@ import {
 import Upload from "./upload";
 import { useState } from "react";
 import axios from "axios";
+import Manageprojects from "./manageprojects";
+import { API_BASE_URL } from "../../config";
+import { useCtx } from "./AdminContext";
 
-function DrawerContainer({ isOpen, action, onClose, jwt }) {
+function DrawerContainer({ isOpen, action, onClose, jwt, posts }) {
   const loci = useBreakpointValue(["bottom", "bottom", "right"]);
   const size =
     action === "MANAGE" ? useBreakpointValue(["full", "lg", "xl"]) : "md";
@@ -23,6 +26,7 @@ function DrawerContainer({ isOpen, action, onClose, jwt }) {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
   const toast = useToast();
+  const { dispatchEvent } = useCtx();
 
   const handleSubmit = () => {
     setloading(true);
@@ -31,12 +35,10 @@ function DrawerContainer({ isOpen, action, onClose, jwt }) {
     formData.append("caption", caption);
     formData.append("jwt", jwt);
     axios
-      .post("http://localhost:8000/api/projects.php", formData, {
+      .post(API_BASE_URL + "/api/projects.php", formData, {
         headers: { "content-Type": "multipart/form-data" },
       })
       .then(function (response) {
-        console.log(response);
-
         if (response.data) {
           toast({
             status: "success",
@@ -44,6 +46,8 @@ function DrawerContainer({ isOpen, action, onClose, jwt }) {
             position: "bottom-right",
             isClosable: true,
           });
+          dispatchEvent("FETCH_PROJECTS", null);
+
           onClose();
         } else {
           throw new Error(response.data);
@@ -83,7 +87,7 @@ function DrawerContainer({ isOpen, action, onClose, jwt }) {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            {action === "ADD" ? "Add Project" : "Manage Project"}
+            {action === "ADD" ? "Add Project" : "Manage Projects"}
           </DrawerHeader>
 
           <DrawerBody>
@@ -96,6 +100,7 @@ function DrawerContainer({ isOpen, action, onClose, jwt }) {
                   setCaption={setCaption}
                 />
               )}
+              {action === "MANAGE" && <Manageprojects jwt={jwt} />}
             </Box>
           </DrawerBody>
 
@@ -108,13 +113,15 @@ function DrawerContainer({ isOpen, action, onClose, jwt }) {
             >
               Cancel
             </Button>
-            <Button
-              onClick={handleSubmit}
-              disabled={loading || caption.trim() === "" || !image}
-              colorScheme="blue"
-            >
-              Save
-            </Button>
+            {action === "ADD" && (
+              <Button
+                onClick={handleSubmit}
+                disabled={loading || caption.trim() === "" || !image}
+                colorScheme="blue"
+              >
+                Save
+              </Button>
+            )}
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

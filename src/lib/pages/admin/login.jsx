@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../../config";
 
 function Login({ handleAuth }) {
   const toast = useToast();
@@ -29,7 +30,7 @@ function Login({ handleAuth }) {
       password: password.value,
     };
     axios
-      .post("http://localhost:8000/api/login.php", data, { headers: headers })
+      .post(API_BASE_URL + "/api/login.php", data, { headers: headers })
       .then(function (response) {
         if (response.data.token) {
           toast({
@@ -39,13 +40,13 @@ function Login({ handleAuth }) {
             isClosable: true,
           });
           handleAuth(response.data.token);
-          console.log(response);
+          setloading(false);
         } else {
           throw new Error(response.data);
         }
       })
       .catch(function (error) {
-        console.log(error.response);
+        setloading(false);
         toast({
           status: "error",
           title: "Request failed",
@@ -56,7 +57,6 @@ function Login({ handleAuth }) {
           isClosable: true,
         });
       });
-    setloading(false);
   };
   return (
     <Box>

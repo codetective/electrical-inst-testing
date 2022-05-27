@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Login from "../lib/pages/admin/login";
 import jwt_decode from "jwt-decode";
 import Home from "../lib/pages/admin/home";
+import { AdminProvider } from "../lib/pages/admin/AdminContext";
 
 export default function admin() {
   const [loading, setLoading] = useState(true);
@@ -45,10 +46,10 @@ export default function admin() {
     }
   }, []);
   return (
-    <>
+    <AdminProvider>
       {loading && <Center h="100vh">Loading...</Center>}
       {!loading && !auth && <Login handleAuth={handleAuth} />}
       {auth && <Home auth={auth} jwt={jwt} />}
-    </>
+    </AdminProvider>
   );
 }

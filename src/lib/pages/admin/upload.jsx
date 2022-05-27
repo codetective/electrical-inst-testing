@@ -1,6 +1,4 @@
 import {
-  Box,
-  Button,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -9,7 +7,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Upload({ image, caption, setImage, setCaption }) {
   const handleImage = (e) => {

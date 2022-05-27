@@ -49,7 +49,6 @@ function Getquote() {
             position: "bottom-right",
             isClosable: true,
           });
-          console.log(response);
           e.target.reset();
           setSubmitting(false);
         } else {
@@ -58,7 +57,6 @@ function Getquote() {
         }
       })
       .catch(function (error) {
-        console.log(error);
         setSubmitting(false);
 
         toast({

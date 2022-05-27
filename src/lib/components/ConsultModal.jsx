@@ -53,7 +53,6 @@ export default function ConsultModal({ pageState, size = "md", close }) {
             position: "bottom-right",
             isClosable: true,
           });
-          console.log(response);
           e.target.reset();
           setLoading(false);
         } else {
@@ -62,7 +61,6 @@ export default function ConsultModal({ pageState, size = "md", close }) {
         }
       })
       .catch(function (error) {
-        console.log(error);
         setLoading(false);
 
         toast({
