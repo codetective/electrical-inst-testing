@@ -1,42 +1,20 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Button, Center, SimpleGrid, Spinner, Stack } from "@chakra-ui/react";
+import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import React from "react";
 import SEO from "../../components/SEO";
 import PageTitleHero from "../../layout/PageTitleHero";
 import WrapContent from "../../layout/WrapContent";
+import { usePCtx } from "./ProjectContext";
 import ProjectDetails from "./ProjectDetails";
-
-const projects = [
-  {
-    title: "Project 1 title lorem",
-    desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam z   nonumy eirmod tempor invidunt ut labore",
-    image: "/images/pj1.jpg",
-    location: "Oshodip, Lagos",
-    tag: "Design and Development",
-  },
-  {
-    title: "Project 2 title lorem",
-    desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam z   nonumy eirmod tempor invidunt ut labore",
-    image: "/images/pj2.jpg",
-    location: "Oshodip, Lagos",
-    tag: "Design and Development",
-  },
-  {
-    title: "Project 3 title lorem",
-    desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam z   nonumy eirmod tempor invidunt ut labore",
-    image: "/images/pj3.jpg",
-    location: "Oshodip, Lagos",
-    tag: "Design and Development",
-  },
-  {
-    title: "Project 4 title lorem",
-    desc: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam z   nonumy eirmod tempor invidunt ut labore",
-    image: "/images/pj4.jpg",
-    location: "Oshodip, Lagos",
-    tag: "Design and Development",
-  },
-];
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 
 function index() {
+  const { error, loading, projects, dispatchEvent } = usePCtx();
   return (
     <>
       <SEO
@@ -51,18 +29,52 @@ function index() {
         title="Our Projects"
       />
       <WrapContent>
-        <SimpleGrid spacing="10" columns={[1, 1, 2]} py="40px">
-          {projects.map((p, index) => (
-            <ProjectDetails
-              key={index}
-              title={p.title}
-              desc={p.desc}
-              tag={p.tag}
-              location={p.location}
-              image={p.image}
-              idx={index}
-            />
-          ))}
+        <SimpleGrid spacing="10" columns={[1]} py="40px">
+          {!loading &&
+            !error &&
+            projects &&
+            projects.map((p, index) => (
+              <ProjectDetails key={index} desc={p.caption} image={p.path} />
+            ))}
+          {loading && !error && (
+            <>
+              <Stack spacing="8">
+                <Skeleton h="200px" />
+                <SkeletonText noOfLines={5} />
+              </Stack>
+              <Stack spacing="8">
+                <Skeleton h="200px" />
+                <SkeletonText noOfLines={5} />
+              </Stack>
+            </>
+          )}
+          {!loading && error && (
+            <Alert
+              status="error"
+              variant="subtle"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center"
+              textAlign="center"
+              height="200px"
+            >
+              <AlertIcon boxSize="40px" mr={0} />
+              <AlertTitle mt={4} mb={1} fontSize="lg">
+                An error occurred!
+              </AlertTitle>
+              <AlertDescription maxWidth="sm">
+                This may be a problem with the network.
+                <br />
+                <br />
+                <Button
+                  onClick={() => dispatchEvent("FETCH_PROJECTS", null)}
+                  colorScheme={"blue"}
+                >
+                  Pleast Retry
+                </Button>
+              </AlertDescription>
+            </Alert>
+          )}
         </SimpleGrid>
       </WrapContent>
     </>
