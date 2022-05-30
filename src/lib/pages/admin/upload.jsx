@@ -9,7 +9,14 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-export default function Upload({ image, caption, setImage, setCaption }) {
+export default function Upload({
+  image,
+  caption,
+  title,
+  setTitle,
+  setImage,
+  setCaption,
+}) {
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
@@ -29,6 +36,15 @@ export default function Upload({ image, caption, setImage, setCaption }) {
         {image && <FormHelperText>*image preview below</FormHelperText>}
       </FormControl>
 
+      <FormControl isRequired>
+        <FormLabel>Title</FormLabel>
+        <Input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          name="title"
+        />
+      </FormControl>
       <FormControl isRequired>
         <FormLabel>Caption</FormLabel>
 

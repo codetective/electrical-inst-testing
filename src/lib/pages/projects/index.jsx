@@ -34,7 +34,12 @@ function index() {
             !error &&
             projects &&
             projects.map((p, index) => (
-              <ProjectDetails key={index} desc={p.caption} image={p.path} />
+              <ProjectDetails
+                key={index}
+                desc={p.caption}
+                title={p.title}
+                image={p.path}
+              />
             ))}
           {loading && !error && (
             <>

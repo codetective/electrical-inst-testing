@@ -24,6 +24,7 @@ function DrawerContainer({ isOpen, action, onClose, jwt, posts }) {
     action === "MANAGE" ? useBreakpointValue(["full", "lg", "xl"]) : "md";
   const [loading, setloading] = useState(false);
   const [image, setImage] = useState(null);
+  const [title, setTitle] = useState(null);
   const [caption, setCaption] = useState("");
   const toast = useToast();
   const { dispatchEvent } = useCtx();
@@ -33,6 +34,7 @@ function DrawerContainer({ isOpen, action, onClose, jwt, posts }) {
     const formData = new FormData();
     formData.append("image", image);
     formData.append("caption", caption);
+    formData.append("title", title);
     formData.append("jwt", jwt);
     axios
       .post(API_BASE_URL + "/api/projects.php", formData, {
@@ -96,6 +98,8 @@ function DrawerContainer({ isOpen, action, onClose, jwt, posts }) {
                 <Upload
                   caption={caption}
                   image={image}
+                  title={title}
+                  setTitle={setTitle}
                   setImage={setImage}
                   setCaption={setCaption}
                 />

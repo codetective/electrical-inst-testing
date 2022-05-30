@@ -6,6 +6,7 @@ import {
   HStack,
   IconButton,
   Image,
+  Input,
   Spinner,
   Stack,
   Text,
@@ -65,6 +66,7 @@ function Project({ p, jwt }) {
   const toast = useToast();
   const textarearef = useRef();
   const defaultCaption = useRef(p.caption);
+  const defaultTitle = useRef(p.title);
 
   const [textAreaHeight, setTextAreaHeight] = useState("auto");
   const [parentHeight, setParentHeight] = useState("auto");
@@ -72,6 +74,7 @@ function Project({ p, jwt }) {
     textarearef.current.focus();
   };
   const [caption, setCaption] = useState(p.caption);
+  const [title, setTitle] = useState(p.title);
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -88,13 +91,14 @@ function Project({ p, jwt }) {
 
   const cancelEditing = () => {
     setCaption(defaultCaption.current);
+    setTitle(defaultTitle.current);
     setEditing(false);
   };
 
   const edit = (e) => {
     e.preventDefault();
     setLoading(true);
-    let data = { caption, id: p.id, jwt };
+    let data = { caption, title, id: p.id, jwt };
     axios
       .put(API_BASE_URL + "/api/projects.php", data, { headers })
       .then(() => {
@@ -175,12 +179,22 @@ function Project({ p, jwt }) {
             focusInput();
           }}
         >
-          {editing ? "cancel edit" : "Edit caption"}
+          {editing ? "cancel edit" : "Edit"}
         </Button>
       </HStack>
+      <FormControl isRequired>
+        <Input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          name="title"
+          isReadOnly={!editing}
+        />
+      </FormControl>
       <Box p={editing ? "0" : "4"} bg="gray.100" fontSize="lg">
         {editing ? "" : caption}
       </Box>
+
       <FormControl
         display={editing ? "block" : "none"}
         style={{
