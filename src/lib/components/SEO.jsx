@@ -8,7 +8,7 @@ function SEO({ title, desc, path }) {
       title={title}
       description={desc}
       canonical={path}
-      additionalMetaTags={SEOTAGS(title, desc, path)}
+      additionalMetaTags={SEOTAGS(title, path, desc)}
     />
   );
 }

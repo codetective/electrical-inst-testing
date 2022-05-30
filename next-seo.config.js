@@ -2,16 +2,18 @@ const defaultSEOConfig = {
   title: "Welcome to Avetrix",
   titleTemplate: "%s | Avetrix Controls Limited",
   defaultTitle: "Avetrix Controls Limited",
-  description: "template for site",
-  canonical: "site url",
+  description:
+    "We are an electrical instrumentation and automation company with extensive experience in Engineering, Procurement, Construction, Project Management and Facility Maintenance.",
+  canonical: "https://avetrix.com",
   openGraph: {
-    url: "site url",
+    url: "https://avetrix.com",
     title: "Avetrix Controls Limited",
-    description: "Engineering and design site",
+    description:
+      "We are an electrical instrumentation and automation company with extensive experience in Engineering, Procurement, Construction, Project Management and Facility Maintenance.",
     images: [
       {
-        url: "image url",
-        alt: "url og-image",
+        url: "https://avetrix.com/meta.jpeg",
+        alt: "Avetrix Controls Limited",
       },
     ],
     site_name: "Avetrix Controls Limited",

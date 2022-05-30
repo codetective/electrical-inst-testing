@@ -16,7 +16,11 @@ const pageDetails = {
 export default function About() {
   return (
     <>
-      <SEO title={"About"} desc="about page for site" path="/about_us" />
+      <SEO
+        title={"About Avetrix"}
+        desc={pageDetails.tagline}
+        path="/about_us"
+      />
 
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <AboutIntro />

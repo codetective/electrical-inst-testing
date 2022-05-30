@@ -1,4 +1,4 @@
-const BASE_URL = "http://www.avetrix.com";
+const BASE_URL = "https://www.avetrix.com";
 const API_BASE_URL = "http://api.avetrix.com";
 
 // const API_BASE_URL = "http://localhost:8000";
@@ -23,7 +23,7 @@ const SEOTAGS = (title, path, desc) => {
     },
     {
       property: "og:image",
-      content: "Image URL",
+      content: "https://avetrix.com/meta.jpeg",
     },
     {
       property: "twitter:card",
@@ -43,7 +43,7 @@ const SEOTAGS = (title, path, desc) => {
     },
     {
       property: "twitter:image",
-      content: "IMAGE_URL",
+      content: "https://avetrix.com/meta.jpeg",
     },
   ];
 };

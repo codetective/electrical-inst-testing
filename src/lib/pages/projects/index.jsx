@@ -39,10 +39,14 @@ const projects = [
 function index() {
   return (
     <>
-      <SEO title={"projects"} desc="projects page" path="/projects" />
+      <SEO
+        title={"Our Projects"}
+        desc="With a quick review of our project profiles and client testimonials below, your confidence in our performance will be reinforced..."
+        path="/projects"
+      />
       <PageTitleHero
         tagline={
-          "With a quick review of our project profiles and client testimonials below, hopefully your confidence in our performance will be reinforced, our results will be validated and enough proof will be provided to support your decision to trust us with your projects."
+          "With a quick review of our project profiles and client testimonials below, your confidence in our performance will be reinforced, our results will be validated and enough proof will be provided to support your decision to trust us with your projects."
         }
         title="Our Projects"
       />

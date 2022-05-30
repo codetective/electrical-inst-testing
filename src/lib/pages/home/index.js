@@ -9,7 +9,11 @@ import CTA from "../../components/CTA2";
 const Home = () => {
   return (
     <>
-      <SEO title={"Welcome"} desc="landing page for site" path="/" />
+      <SEO
+        title={"Welcome"}
+        desc="We are an electrical instrumentation and automation company with extensive experience in Engineering, Procurement, Construction, Project Management and Facility Maintenance."
+        path="/"
+      />
       <NewHero />
       <AboutSection />
       <OurServicesAreas />

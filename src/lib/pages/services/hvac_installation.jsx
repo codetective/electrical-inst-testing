@@ -11,6 +11,7 @@ import React from "react";
 import CTA from "../../components/CTA2";
 
 import SectionHeading from "../../components/SectionHeading";
+import SEO from "../../components/SEO";
 import PageTitleHero from "../../layout/PageTitleHero";
 import WrapContent from "../../layout/WrapContent";
 import ServiceFeaturesBox from "./ServiceFeaturesBox";
@@ -19,6 +20,13 @@ import ServicesLinkBox from "./ServicesLinkBox";
 function HVAC() {
   return (
     <>
+      <SEO
+        title={"HVAC systems installation services"}
+        desc="
+        AVETRIX is duly incorporated in Nigeria as an integrated Engineering firm offering Supply, Installation and Maintenace services, 
+        Fire and gas services, Facility Installation, HVAC Installation Services and more."
+        path="/hvac_installation"
+      />
       <Box>
         <PageTitleHero
           title={"Heating and Ventilation Services"}

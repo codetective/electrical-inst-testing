@@ -25,6 +25,7 @@ import SmallTitleWithBar from "../lib/components/SmallTitleWithBar";
 import SectionHeading from "../lib/components/SectionHeading";
 import Link from "next/link";
 import SiteLink from "../lib/components/SiteLink";
+import SEO from "../lib/components/SEO";
 
 const pageDetails = {
   title: "Contact Us",
@@ -35,6 +36,11 @@ const pageDetails = {
 export default function Contact() {
   return (
     <>
+      <SEO
+        title={"Contact US"}
+        desc="Let us know how we can help you with your existing or future projects"
+        path="/contact"
+      />
       <PageTitleHero tagline={pageDetails.tagline} title={pageDetails.title} />
       <SlideFade in offsetY="40px">
         <Box position="relative" width="100%" pt="40px" pb="80px">

@@ -35,7 +35,9 @@ function index() {
     <>
       <SEO
         title={"Services offered at Avetrix"}
-        desc="Here you'll find alist of services we offer"
+        desc="
+        AVETRIX is duly incorporated in Nigeria as an integrated Engineering firm offering Supply, Installation and Maintenace services, 
+        Fire and gas services, Facility Installation, HVAC Installation Services and more."
         path="/services"
       />
       <PageTitleHero tagline={""} title="What We Do" />
