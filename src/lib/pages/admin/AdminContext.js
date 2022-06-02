@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { API_BASE_URL } from "../../config";
 const headers = { "Content-Type": "application/json" };
 
@@ -23,7 +23,11 @@ export const AdminProvider = ({ children }) => {
           .get(API_BASE_URL + "/api/projects.php")
           .then((response) => {
             setLoading(false);
-            setProjects(response.data.projects);
+            if (response.data.projects) {
+              setProjects(response.data.projects);
+            } else {
+              setError(true);
+            }
           })
           .catch((error) => {
             setLoading(false);
@@ -39,10 +43,6 @@ export const AdminProvider = ({ children }) => {
         return;
     }
   };
-
-  useEffect(() => {
-    dispatchEvent("FETCH_PROJECTS", null);
-  }, []);
 
   return (
     <AdminContext.Provider value={{ error, projects, loading, dispatchEvent }}>

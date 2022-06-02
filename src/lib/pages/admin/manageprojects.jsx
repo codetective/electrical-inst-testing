@@ -1,4 +1,7 @@
 import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
   Box,
   Button,
   Center,
@@ -23,12 +26,42 @@ const headers = { "Content-Type": "application/json" };
 
 function Manageprojects({ jwt }) {
   const { projects, dispatchEvent, error, loading } = useCtx();
+  useEffect(() => {
+    dispatchEvent("FETCH_PROJECTS", null);
+  }, []);
   return (
     <div>
       {!error && !loading && projects.length === 0 && (
         <>
           <Center fontSize={"2xl"}>No projects in db</Center>
         </>
+      )}
+      {error && !loading && (
+        <Alert
+          status="error"
+          variant="subtle"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+          height="200px"
+        >
+          <AlertIcon boxSize="40px" mr={0} />
+          <AlertTitle mt={4} mb={1} fontSize="lg">
+            An error occurred!
+          </AlertTitle>
+          <AlertDescription maxWidth="sm">
+            This may be a problem with the network.
+            <br />
+            <br />
+            <Button
+              onClick={() => dispatchEvent("FETCH_PROJECTS", null)}
+              colorScheme={"blue"}
+            >
+              Pleast Retry
+            </Button>
+          </AlertDescription>
+        </Alert>
       )}
       {!error && !loading && projects.length != 0 && (
         <Stack spacing={16}>
