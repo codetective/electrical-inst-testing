@@ -12,7 +12,7 @@ export default function ProjectDetails({ image, title, desc }) {
     >
       <Box maxH="320px">
         <Image
-          roundedLeft="lg"
+          rounded="lg"
           src={API_BASE_URL + image}
           objectFit="cover"
           width="full"
