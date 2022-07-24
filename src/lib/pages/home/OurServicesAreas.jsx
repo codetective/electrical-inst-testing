@@ -18,8 +18,9 @@ const contentForCards = [
     heading: "Supply, installation, maintenance and calibration of:",
     link: "/installation_and_maintenance",
     content: [
-      "Pneumatics devices and switches.",
-      "HART devices such as Pressure transmitters,",
+      "Pneumatic devices and control HART devices, systems and packages Flow sensing instruments and packages",
+      "HART devices such as Pressure transmitters.",
+      "Weight measuring instruments and packages",
       "Foundation Fieldbus devices, Systems and packages",
       "GE sensing instruments and Flow Meters",
       "Fire and Gas detection systems",
@@ -40,7 +41,7 @@ const contentForCards = [
     heading: "Fire and gas services:",
     link: "/instrumentation",
     content: [
-      "Supply and installation of Fire fighting systems,",
+      "Supply and installation of Active and Passive fire protection systems.",
       " Voice Evacuation Systems such as PAGA systems,",
       "Advance automated fire detection and alarm systems,",
       "Fire and Gas RIM SEAL Detection systems, and",
@@ -66,7 +67,7 @@ const contentForCards = [
 
 export default function OurServicesAreas() {
   return (
-    <Box bg="gray.50" id="services">
+    <Box bg="gray.50">
       <WrapContent>
         <Stack py="60px" spacing={"10"}>
           <Stack spacing="5">

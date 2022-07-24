@@ -131,12 +131,12 @@ function NewHero() {
                     rightIcon={<FiArrowDown />}
                     onClick={() => {
                       var elem =
-                        window && window.document.querySelector("#services");
+                        window && window.document.querySelector("#explore");
 
                       elem.scrollIntoView({
                         behavior: "smooth",
-                        block: "start",
-                        inline: "nearest",
+                        block: "center",
+                        inline: "center",
                       });
                     }}
                   >
