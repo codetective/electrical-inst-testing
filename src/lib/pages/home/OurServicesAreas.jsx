@@ -18,12 +18,10 @@ const contentForCards = [
     heading: "Supply, installation, maintenance and calibration of:",
     link: "/installation_and_maintenance",
     content: [
-      "Pneumatic devices and control HART devices, systems and packages Flow sensing instruments and packages",
-      "HART devices such as Pressure transmitters.",
-      "Weight measuring instruments and packages",
-      "Foundation Fieldbus devices, Systems and packages",
-      "GE sensing instruments and Flow Meters",
-      "Fire and Gas detection systems",
+      "Pneumatic devices and control.",
+      "HART devices, systems and packages.",
+      "Flow sensing instruments and packages.",
+      "Weight measuring instruments and packages.",
     ],
   },
   {
