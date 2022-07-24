@@ -62,9 +62,11 @@ export default function Details() {
                   Excellence established in 2012
                 </Heading>
                 <Text fontSize={"xl"} color={"gray.400"}>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old.
+                  Established in 2012, AVETRIX is duly incorporated in Nigeria
+                  as an integrated Engineering firm offering strategic
+                  Engineering Services to the Oil & Gas sector, Manufacturing,
+                  Construction, Maritime, Industries and Government
+                  establishments.
                 </Text>
               </Box>
 
@@ -102,7 +104,7 @@ const StatsText = ({ children }) => (
 
 const stats = [
   {
-    title: "100+",
+    title: "150+",
     content: (
       <>
         <StatsText>projects delivered</StatsText> timely and with perfect
