@@ -26,6 +26,7 @@ import SectionHeading from "../lib/components/SectionHeading";
 import Link from "next/link";
 import SiteLink from "../lib/components/SiteLink";
 import SEO from "../lib/components/SEO";
+import data from "../lib/data";
 
 const pageDetails = {
   title: "Contact Us",
@@ -52,28 +53,28 @@ export default function Contact() {
                   <SectionHeading text="Call or Write us!" />
                 </Stack>
                 <Stack fontSize={"xl"}>
-                  <Text>Company Headquater LTD</Text>
-                  <Text> 1738 Address Road</Text>
-                  <Text> City, State</Text>
-                  <SiteLink
+                  <Text>{data.name}</Text>
+                  <Text>{data.location}</Text>
+
+                  {/* <SiteLink
                     text="GET DIRECTIONS"
                     path="/path"
                     target="_blank"
-                  />
+                  /> */}
                   <br />
-                  <Link href="tel:+2348177552052">
+                  <Link href={`tel:${data.phone}`}>
                     <Text cursor="pointer" width="fit-content">
                       Phone:{" "}
                       <Text as="span" color="brand.300">
-                        +234 817 755 2052{" "}
+                        {data.phone}
                       </Text>
                     </Text>
                   </Link>
-                  <Link href="mailto:company@email.domain">
+                  <Link href={`mailto:${data.email}`}>
                     <Text cursor="pointer" width="fit-content">
                       Email:{" "}
                       <Text as="span" color="brand.300">
-                        company@email.domain
+                        {data.email}
                       </Text>
                     </Text>
                   </Link>
