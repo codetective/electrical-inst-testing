@@ -30,7 +30,7 @@ function HVAC() {
       <Box>
         <PageTitleHero
           title={"Heating and Ventilation Services"}
-          tagline="From unitary products to applied systems, AVETRIX Global offers a comprehensive line of commercial HVAC systems and services."
+          tagline="From unitary products to applied systems, AVETRIX Controls offers a comprehensive line of commercial HVAC systems and services."
         />
         <WrapContent>
           <Stack
@@ -64,7 +64,7 @@ function HVAC() {
               <Stack spacing="5" fontFamily={"Montserrat"}>
                 {/* <Text></Text> */}
                 <Text color="gray.700">
-                  ● AVETRIX Global offers a large range of choice for air
+                  ● AVETRIX Controls offers a large range of choice for air
                   conditioning / heating and refrigeration units to satisfy
                   every customer’s needs.
                   <p>
@@ -72,7 +72,7 @@ function HVAC() {
                     as Carrier, Panasonic and Fujitsu.
                   </p>
                   <p>
-                    Furthermore, AVETRIX Global also provides a unique service
+                    Furthermore, AVETRIX Controls also provides a unique service
                     that ensures your system operates at peak efficiency, in
                     both energy management and in system performance.
                   </p>
@@ -80,7 +80,7 @@ function HVAC() {
                 <Text color="gray.700">
                   ● Cooling and Heating Systems:
                   <p>
-                    From unitary products to applied systems, AVETRIX Global
+                    From unitary products to applied systems, AVETRIX Controls
                     offers a comprehensive line of commercial HVAC systems and
                     services for office buildings, manufacturing, retail,
                     schools and universities, Oil and Gas sector, companies and
@@ -90,7 +90,7 @@ function HVAC() {
                 <Text color="gray.700">
                   ● Accommodation Air Conditioning:{" "}
                   <p>
-                    AVETRIX Global offers Corrective and Preventative
+                    AVETRIX Controls offers Corrective and Preventative
                     Maintenance Services for a complete heating/cooling solution
                     for hotels, industries, and apartment buildings.{" "}
                   </p>
@@ -98,13 +98,13 @@ function HVAC() {
                 <Text color="gray.700">
                   ● Preventative Maintenance Agreements:{" "}
                   <p>
-                    AVETRIX Global Customised Preventative Maintenance service
+                    AVETRIX Controls Customised Preventative Maintenance service
                     is unique to the industry. The Maintenance Service Agreement
                     keeps your system in tip-top shape, and helps prevent
                     unwanted service calls.
                   </p>
                   A Preventative Maintenance service agreement from AVETRIX
-                  Global Air Conditioning, will save you money and assure
+                  Controls Air Conditioning, will save you money and assure
                   uninterrupted all year round comfort
                 </Text>
               </Stack>

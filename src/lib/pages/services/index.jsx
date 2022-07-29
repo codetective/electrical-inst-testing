@@ -9,7 +9,7 @@ import CTA from "../../components/CTA";
 
 export const services = [
   {
-    title: "Supply, Installation and Maintenace",
+    title: "Supply, Installation and Maintenance",
     img: "/images/install.jpg",
     path: "/installation_and_maintenance",
   },
@@ -19,7 +19,7 @@ export const services = [
     path: "/fire_and_gas",
   },
   {
-    title: "Facility Installation",
+    title: "Facility Installation and Commissioning",
     img: "/images/facility.jpg",
     path: "/facility_installation",
   },
