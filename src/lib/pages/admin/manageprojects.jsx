@@ -2,6 +2,7 @@ import {
   Alert,
   AlertDescription,
   AlertIcon,
+  AlertTitle,
   Box,
   Button,
   Center,
@@ -132,6 +133,7 @@ function Project({ p, jwt }) {
     e.preventDefault();
     setLoading(true);
     let data = { caption, title, id: p.id, jwt };
+    console.log(data);
     axios
       .put(API_BASE_URL + "/api/projects.php", data, { headers })
       .then(() => {

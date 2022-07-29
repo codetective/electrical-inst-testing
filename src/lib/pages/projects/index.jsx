@@ -29,7 +29,7 @@ function index() {
         title="Our Projects"
       />
       <WrapContent>
-        <SimpleGrid spacing="20" columns={[1]} py="40px">
+        <SimpleGrid spacing="10" columns={[1, 1, 2, 2]} py="40px">
           {!loading &&
             !error &&
             projects &&
