@@ -27,7 +27,8 @@ export default function PageTitleHero({ tagline, title }) {
 
       <Box
         pos="relative"
-        bgImage="url('/images/img1.jpg')"
+        // bgImage="url('/images/img1.jpg')"
+        bgImage="url('/images/hero-bg.jpeg')"
         bgRepeat={"no-repeat"}
         bgSize="cover"
         bgPos={"center"}
@@ -38,7 +39,7 @@ export default function PageTitleHero({ tagline, title }) {
         <Box>
           <Container maxWidth="container.xl" px={[5, 5, 8]}>
             <Stack
-              minH={["60vh", "60vh", "60vh"]}
+              minH={["60vh", "70vh", "70vh"]}
               // maxH="700px"
               direction={{ base: "column", md: "row" }}
               pt={["100px", "150px"]}

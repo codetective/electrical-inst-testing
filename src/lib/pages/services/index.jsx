@@ -15,7 +15,7 @@ export const services = [
   },
   {
     title: "Fire and gas services",
-    img: "/images/fireandgas.jpg",
+    img: "/images/f&g.jpeg",
     path: "/fire_and_gas",
   },
   {
@@ -62,7 +62,7 @@ function index() {
                   <Link href={s.path} key={i}>
                     <a className="pjlink">
                       <Stack>
-                        <Box h="270px" overflow="hidden">
+                        <Box h={["280px", "300px", "350px"]} overflow="hidden">
                           <Image
                             w="full"
                             h="full"

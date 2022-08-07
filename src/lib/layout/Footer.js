@@ -79,7 +79,7 @@ export default function LargeWithLogoCentered() {
               <Link href={"/about_us"}>About Us</Link>
               <Link href={"/projects"}>Project Portfolio</Link>
               <Link href={"/services"}>What We Do</Link>
-              <Link href={"/why_us"}>Why Us</Link>
+              {/* <Link href={"/why_us"}>Why Us</Link> */}
               <Link href={"/contact"}>Contact Us</Link>
             </Stack>
             <Stack align={"flex-start"}>
