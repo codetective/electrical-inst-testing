@@ -83,7 +83,7 @@ function Login({ handleAuth }) {
             lineHeight={1.1}
             fontSize={{ base: "2xl", md: "3xl" }}
           >
-            Alvitrex Admin Login
+            Avetrix Admin Login
           </Heading>
           <Text textAlign="center">Enter Email and password to login</Text>
           <FormControl id="email" isRequired>

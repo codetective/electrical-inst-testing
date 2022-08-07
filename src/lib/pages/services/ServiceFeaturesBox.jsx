@@ -10,7 +10,7 @@ export default function ServiceFeaturesBox() {
       <SimpleGrid columns={[1, 1, 2]}>
         <InfoCard
           title={"expert personnel"}
-          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          desc="We have acquired trainings and technical expertise from Original Equipment Manufacturer (OEMs). Our strong support and maintenance culture has enabled us establish very good relationships with our clients. With our experienced engineers operating in Lagos, Abuja and Port Harcourt, a minimal response time to any maintenance requirements is guaranteed"
           icon={GrUserExpert}
         />
 

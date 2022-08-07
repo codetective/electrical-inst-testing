@@ -5,8 +5,11 @@ import {
   Stack,
   Button,
   useDisclosure,
+  Circle,
+  Icon,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { HiOutlineLogout } from "react-icons/hi";
 import DrawerContainer from "./drawer";
 
 function Home({ auth, jwt }) {
@@ -73,6 +76,37 @@ function Home({ auth, jwt }) {
           onClose={onClose}
         />
       )}
+      <Button
+        onClick={() => {
+          localStorage.removeItem("alvesharp");
+          window.location.reload();
+        }}
+        rounded={"50%"}
+        w="45px"
+        h="45px"
+        colorScheme={"red"}
+        pos="fixed"
+        bottom={"50px"}
+        right="50px"
+        transition="all 1s ease"
+        _hover={{
+          w: "100px",
+          rounded: "30px",
+        }}
+        data-group
+      >
+        <Icon fontSize={"25px"}>
+          <HiOutlineLogout />
+        </Icon>
+        <Box
+          display={"none"}
+          _groupHover={{
+            display: "block",
+          }}
+        >
+          Log out
+        </Box>
+      </Button>
     </Box>
   );
 }
