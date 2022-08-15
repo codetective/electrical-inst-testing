@@ -26,11 +26,11 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <meta
-            http-equiv="Cache-Control"
+            httpEquiv="Cache-Control"
             content="no-cache, no-store, must-revalidate"
           />
-          <meta http-equiv="Pragma" content="no-cache" />
-          <meta http-equiv="Expires" content="0" />
+          <meta httpEquiv="Pragma" content="no-cache" />
+          <meta httpEquiv="Expires" content="0" />
           <meta name="application-name" content={APP_NAME} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta

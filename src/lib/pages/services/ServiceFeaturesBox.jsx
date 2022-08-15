@@ -3,6 +3,7 @@ import React from "react";
 import { GrUserExpert } from "react-icons/gr";
 import { HiBadgeCheck, HiOutlineThumbUp } from "react-icons/hi";
 import { AiOutlineFieldTime } from "react-icons/ai";
+// Our strong support and maintenance culture has enabled us establish very good relationships with our clients.
 
 export default function ServiceFeaturesBox() {
   return (
@@ -10,23 +11,23 @@ export default function ServiceFeaturesBox() {
       <SimpleGrid columns={[1, 1, 2]}>
         <InfoCard
           title={"expert personnel"}
-          desc="We have acquired trainings and technical expertise from Original Equipment Manufacturer (OEMs). Our strong support and maintenance culture has enabled us establish very good relationships with our clients. With our experienced engineers operating in Lagos, Abuja and Port Harcourt, a minimal response time to any maintenance requirements is guaranteed"
+          desc="We have acquired trainings and technical expertise from Original Equipment Manufacturer (OEMs). With our experienced engineers operating in Lagos, Abuja and Port Harcourt, a minimal response time to any maintenance requirements is guaranteed"
           icon={GrUserExpert}
         />
 
         <InfoCard
           title={"Delivery on time"}
-          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          desc="AVETRIX drives innovation and timely delivery that makes the world safer and sustainable."
           icon={AiOutlineFieldTime}
         />
         <InfoCard
           title={"quality products"}
-          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          desc="AVETRIX CONTROLS set industry standards for reliability, adaptability and energy efficiency."
           icon={HiBadgeCheck}
         />
         <InfoCard
           title={"#1 consultancy team"}
-          desc=" Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment"
+          desc="Our consultants employ innovative technologies to accelerate your competitive edge."
           icon={HiOutlineThumbUp}
         />
       </SimpleGrid>
